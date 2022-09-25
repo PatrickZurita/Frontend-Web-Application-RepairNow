@@ -1,14 +1,20 @@
-<script setup>
+<script>
+import NavigationBar from '../src/components/NavigationBar.vue'
+import Home from '../src/components/Home.vue'
+
+export default {
+  components:{
+    Home,
+    NavigationBar
+  }
+}
 
 </script>
 
 <template>
  
-<h1>RepairNow</h1>
-
-
-
-
+<NavigationBar />
+<Home />
 
 </template>
 

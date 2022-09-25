@@ -14,7 +14,6 @@ export default {
 <template>
  
 <NavigationBar />
-<Home />
 
 </template>
 

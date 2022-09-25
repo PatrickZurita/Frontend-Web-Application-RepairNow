@@ -5,7 +5,18 @@
 <template>
  
 <h1>RepairNow</h1>
+
+
+
+
+
 </template>
+
+
+
+
+
+
 
 <style scoped>
 header {

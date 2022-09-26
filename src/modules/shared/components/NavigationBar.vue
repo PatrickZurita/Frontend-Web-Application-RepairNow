@@ -20,8 +20,6 @@
     </pv-toolbar>
 
 </nav>
-
-<router-view></router-view>
   
 </template>
 

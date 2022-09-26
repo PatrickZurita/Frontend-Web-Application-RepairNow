@@ -1,20 +1,21 @@
 <script>
-import NavigationBar from '../src/components/NavigationBar.vue'
-import Home from '../src/components/Home.vue'
+import {defineAsyncComponent} from 'vue'
+// import NavigationBar from './modules/shared/components/NavigationBar.vue'
+// import Home from '../src/components/Home.vue'
 
 export default {
+  
   components:{
-    Home,
-    NavigationBar
+    NavigationBar: defineAsyncComponent(()=>import(/*webpackChunkName:"NavBar"*/'./modules/shared/components/NavigationBar.vue'))
   }
 }
 
 </script>
 
 <template>
- 
-<NavigationBar />
 
+<NavigationBar />
+<router-view></router-view>
 </template>
 
 

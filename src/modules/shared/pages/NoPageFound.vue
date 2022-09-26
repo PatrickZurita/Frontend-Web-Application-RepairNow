@@ -1,5 +1,6 @@
 <template>
-<h1>This it Home</h1>
+    <h1>No Page Found</h1>
+    <h3>404</h3>
 </template>
 
 <script>

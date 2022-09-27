@@ -34,6 +34,10 @@ const routes = [
         component: ()=>import(/*webpackChunkName:"ProfileClient"*/'../modules/Client/components/Profile.vue')
     },
     {
+        path: '/Edit-profile',
+        component: ()=>import(/*webpackChunkName:"ProfileClient"*/'../modules/Client/components/Edit-profile.vue')
+    },
+    {
         path: '/:pathMatch(.*)*', //TODO: Dirección donde será enviado el usuario cuando coloque cualquier cosa que no sea uno definido
         component: ()=>import(/*webpackChunkName:"NotPageFound"*/'../modules/shared/pages/NoPageFound.vue')
     },

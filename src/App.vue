@@ -2,7 +2,7 @@
 import {defineAsyncComponent} from 'vue'
 // import NavigationBar from './modules/shared/components/NavigationBar.vue'
 // import Home from '../src/components/Home.vue'
-
+// hola
 export default {
   
   components:{

@@ -7,6 +7,7 @@ We will use git so.. Download git.
 | Requirement | Link |
 | ------ | ------ |
 | GIT | [https://git-scm.com/download/win][url] |
+
 After downloading configure your github user in the terminal
 ```sh
 git config --global user.name "YourName"

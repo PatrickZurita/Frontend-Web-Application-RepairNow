@@ -1,0 +1,37 @@
+{
+  "technicians": [
+    {
+      "id": "1",
+      "names": "Juan Fernando",
+      "lastnames": "Ramirez Rojas",
+      "cellphoneNumber": "999123456",
+      "address": "Urb. Thiago Terán # 452",
+      "email": "jmanzanares@gmail.com",
+      "birthday": "1990-09-11",
+      "password": "juanfer",
+      "lastTimeConnected": "2021-10-11"
+    },
+    {
+      "id": "2",
+      "names": "Ricardo",
+      "lastnames": "Farías Aragón",
+      "cellphoneNumber": "958870344",
+      "address": "Jr. Alonso Gallegos # 05 Piso 0",
+      "email": "maya.mario@gmail.com",
+      "password": "mayamar",
+      "birthday": "1994-04-22",
+      "lastTimeConnected": "2021-10-01"
+    },
+    {
+      "id": "3",
+      "names": "Alverto Jorge",
+      "lastnames": "Águilar Guzmán",
+      "cellphoneNumber": "937506140",
+      "address": "Av. Mario Vallejo # 65591 Piso 43",
+      "email": "cortes.valentino@gmail.com",
+      "password": "alveragui",
+      "birthday": "1987-10-18",
+      "lastTimeConnected": "2021-10-05"
+    }
+  ]
+}

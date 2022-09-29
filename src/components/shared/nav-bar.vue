@@ -52,6 +52,9 @@ export default {
         }
     },
     methods: {
+        changeBar(){
+            this.number+=1;
+        },
         redirectSignUp(){
             this.$router.push("/register")
         },

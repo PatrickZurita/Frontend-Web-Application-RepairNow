@@ -1,6 +1,7 @@
 # Contributing
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+
 How to contribute to the project without generating conflicts and respecting the git workflow. Please use the terminal. ✨
 ### Requirements
 We will use git so.. Download git.

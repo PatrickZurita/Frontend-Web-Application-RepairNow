@@ -14,45 +14,48 @@ import {createRouter,createWebHistory} from "vue-router"
 const routes = [
     { 
         path: '/',
-        component: ()=>import(/*webpackChunkName:"Home"*/'../components/administrator/home.vue')
+        component: ()=>import(/*webpackChunkName:"Home"*/'../components/shared/home.vue')
      },
      {
         path: '/register',
-        component: ()=>import(/*webpackChunkName:"Register"*/'../components/administrator/register.vue')
+        component: ()=>import(/*webpackChunkName:"Register"*/'../components/shared/register.vue')
      },
      {
         path: '/registerClient',
-        component: ()=>import(/*webpackChunkName:"Register"*/'../components/administrator/registerClient.vue')
+        component: ()=>import(/*webpackChunkName:"RegisterClient"*/'../components/client/register.vue')
      },
      {
         path: '/registerTechnician',
-        component: ()=>import(/*webpackChunkName:"Register"*/'../components/administrator/registerTechnician.vue')
+        component: ()=>import(/*webpackChunkName:"RegisterTechnician"*/'../components/technician/register.vue')
      },
-
      {
         path: '/login',
-        component: ()=>import(/*webpackChunkName:"Login"*/'../components/administrator/login.vue')
+        component: ()=>import(/*webpackChunkName:"Login"*/'../components/shared/login.vue')
+     },
+    //  {
+    //     path: '/technician',
+    //     component: ()=>import(/*webpackChunkName:"Technician"*/'../views/technician/technician.vue')
+    //  },
+     {
+        path: '/technician/profile',
+        component: ()=>import(/*webpackChunkName:"ProfileTechnician"*/'../components/technician/profile.vue')
+     },
+     {
+        path: '/technician/profile/editProfile',
+        component: ()=>import(/*webpackChunkName:"ProfileTechnician"*/'../components/technician/edit-profile.vue')
+     },
+     {
+        path: '/technician/route',
+        component: ()=>import(/*webpackChunkName:"RouteTechnician"*/'../components/technician/route.vue')
+     },
+     {
+        path: '/technician/reports',
+        component: ()=>import(/*webpackChunkName:"RouteTechnician"*/'../components/technician/reports.vue')
      },
      {
         path: '/dashboard',
         component: ()=>import(/*webpackChunkName:"DashBoard"*/'../components/client/dashboard.vue')
      },
-     {
-        path: '/technician',
-        component: ()=>import(/*webpackChunkName:"ProfileTechnician"*/'../components/technician/profile-technician.vue')
-     },
-     {
-        path: '/technician/profile',
-        component: ()=>import(/*webpackChunkName:"ProfileTechnician"*/'../components/technician/profile-technician.vue')
-     },
-     {
-        path: '/technician/route',
-        component: ()=>import(/*webpackChunkName:"RouteTechnician"*/'../components/technician/route-technician.vue')
-     },
-     {
-        path: '/technician/reports',
-        component: ()=>import(/*webpackChunkName:"RouteTechnician"*/'../components/technician/reports-technician.vue')
-     }
 
     // {
     //     path: '/:pathMatch(.*)*', //TODO: Dirección donde será enviado el usuario cuando coloque cualquier cosa que no sea uno definido

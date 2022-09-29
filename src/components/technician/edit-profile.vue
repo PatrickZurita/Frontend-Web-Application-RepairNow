@@ -5,35 +5,35 @@
         <form class="form1">
           <div class="field grid">
             <i class="pi pi-envelope " style="font-size: 2rem"></i>
-            <div class="9"> <InputText placeholder="Email" id="email" class="w-full" /></div>
+            <div class="9"> <pv-input-text placeholder="Email" id="email" class="w-full" v-model="email" ></pv-input-text></div>
           </div>
 
           <div class="field grid">
             <i class="pi pi-user " style="font-size: 2rem"></i>
             <div class="9">
-              <InputText placeholder="Name" id="name" />
-              <InputText placeholder="LastName" id="lastname"/>
+              <pv-input-text placeholder="Name" id="name" v-model="name"/>
+              <pv-input-text placeholder="LastName" id="lastname " v-model="lastName"></pv-input-text>
             </div>
           </div>
 
           <div class="field grid">
               <i class="pi pi-map-marker" style="font-size: 2rem"></i>
-              <div class="9"> <InputText placeholder="Address" id="address" class="w-full" /></div>
+              <div class="9"> <pv-input-text placeholder="Address" id="address" class="w-full" v-model="address"></pv-input-text></div>
           </div>
 
           <div class="field grid">
             <i class="pi pi-phone" style="font-size: 2rem"></i>
-            <div class="9"> <InputMask id="telephone" placeholder="Telephone number" v-model="value1" mask="999999999" /></div>
+            <div class="9"> <pv-input-mask id="telephone" placeholder="Telephone number" v-model="value1" mask="999999999" ></pv-input-mask></div>
           </div>
 
           <div class="field grid">
             <i class="pi pi-lock " style="font-size: 2rem"></i>
-            <div class="9"> <Password placeholder="Password" id="Password" v-model="value2" :feedback="false" /></div>
+            <div class="9"> <pv-password placeholder="Password" id="password" v-model="password" :feedback="false" ></pv-password></div>
           </div>
 
           <div class="field grid">
             <i class="pi pi-lock" style="font-size: 2rem"></i>
-            <div class="9"> <Password placeholder="Repeat password" id="rpassword" v-model="value3" :feedback="false" /></div>
+            <div class="9"> <pv-password placeholder="Repeat password" id="rpassword" v-model="rpassword" :feedback="false"></pv-password></div>
           </div>
         </form>
 
@@ -43,10 +43,12 @@
 
 <script>
 export default {
-  name: "Edit-profile",
-  value1:"",
-  value2:"",
-  value3:""
+  email:"",
+  name:"",
+  lastName:"",
+  address:"",
+  password:"",
+  rpassword:""
 }
 </script>
 

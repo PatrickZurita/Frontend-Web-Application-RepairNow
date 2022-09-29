@@ -12,9 +12,11 @@ import Card from 'primevue/card';
 import InputText from 'primevue/inputtext';
 import Password from 'primevue/password';
 import Button from 'primevue/button';
+import InputMask from 'primevue/inputmask';
 
 
 const app = createApp(App);
+app.component('pv-input-mask',InputMask)
 app.component('pv-button',Button)
 app.component('pv-password',Password)
 app.component('pv-input-text',InputText)

@@ -21,8 +21,7 @@
                             <pv-input-text type="text" v-model="email" placeholder="Email"></pv-input-text>
                         </div>
                         <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-input-text type="text" v-model="password" placeholder="Password"></pv-input-text>
-                            <!-- <pv-password v-model="password" :feedback="false" placeholder="Password"></pv-password> -->
+                            <pv-password v-model="password" :feedback="false" placeholder="Password"></pv-password>
                         </div>
                         <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
                             <pv-button label="Log In" @click="login"></pv-button>
@@ -37,13 +36,11 @@
                 <template #title>
                 </template>
                 <template #content>
-                    Don't have an account? <span style="color:blue" @click="redirect">Sign Up!</span>
+                    Don't have an account? <span class="SignUp" style="color:blue" @click="redirect">Sign Up!</span>
                 </template>
             </pv-card>
 
         </div>
-
-        
 
     </div>
 
@@ -62,12 +59,7 @@ export default {
             password:""
         }
     },
-    methods: {
-
-        register(){
-            new usersServices().register(this.email,this.password).then(response=>console.log("USER CREATED"))
-        },
-            
+    methods: {            
         login(){
             new usersServices().login(this.email,this.password)
             .then(response=>{
@@ -75,10 +67,9 @@ export default {
                 this.$router.push('/dashboard');
                 sessionStorage.setItem("jwt",response.data.accessToken)
             })
-            //.catch(response=>{
-            //    this.$router.push('/')
-            //    console.log("USER NOT EXIST OR WRONG PASSWORD/USER")
-            //})
+            .catch(response=>{
+                alert("Unregistered or misspelled user")
+            })
         },
         redirect(){
             this.$router.push("/register")
@@ -92,6 +83,10 @@ export default {
 
 .Two{
     display: flex;
+}
+.SignUp{
+    cursor: pointer;
+    size: bold;
 }
 
 </style>

@@ -2,8 +2,6 @@
 
 <div class="login">
 
-    <h1>LOGIN</h1>
-
     <div class="Two">
 
         <img src="https://images.samsung.com/is/image/samsung/p6pim/pe/wf21t6500gv-pe/gallery/pe-wf6000tk-wf22t6500gvzs-wf21t6500gv-pe-455673837?$650_519_PNG$" width="700" height="500">
@@ -12,7 +10,7 @@
 
             <pv-card style="width: 25rem; margin-bottom: 2em">
                 <template #title>
-                    <h1>Repair Now</h1>
+                    <h1>Login on Repair Now</h1>
                 </template>
                 <template #content>
                 

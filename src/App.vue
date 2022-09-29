@@ -12,7 +12,7 @@ export default {
   components:{
     // Login,
     // Dashboard
-    //NavigationBar: defineAsyncComponent(()=>import(/*webpackChunkName:"NavBar"*/'./modules/shared/components/NavigationBar.vue'))
+    NavigationBar: defineAsyncComponent(()=>import(/*webpackChunkName:"NavBar"*/'./components/administrator/nav-bar.vue'))
   }
 }
 
@@ -20,7 +20,11 @@ export default {
 
 <template>
 
-  <router-view></router-view>
+  <div class="main">
+    <NavigationBar />
+    <router-view></router-view>
+  </div>
+
 
 
 </template>

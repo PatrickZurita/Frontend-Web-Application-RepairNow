@@ -14,15 +14,19 @@ import {createRouter,createWebHistory} from "vue-router"
 const routes = [
     { 
         path: '/',
+        component: ()=>import(/*webpackChunkName:"Home"*/'../components/administrator/home.vue')
+     },
+     {
+        path: '/register',
+        component: ()=>import(/*webpackChunkName:"Register"*/'../components/administrator/register.vue')
+     },
+     {
+        path: '/login',
         component: ()=>import(/*webpackChunkName:"Login"*/'../components/administrator/login.vue')
      },
      {
         path: '/dashboard',
         component: ()=>import(/*webpackChunkName:"DashBoard"*/'../components/client/dashboard.vue')
-     },
-     {
-        path: '/register',
-        component: ()=>import(/*webpackChunkName:"DashBoard"*/'../components/administrator/register.vue')
      }
     // { 
     //     path: '/MyAppliance', 

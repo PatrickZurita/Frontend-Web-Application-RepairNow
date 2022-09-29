@@ -1,0 +1,31 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "body": "Hola",
+      "author": "Juan"
+    }
+  ],
+  "users": [
+    {
+      "email": "axe@gmail.com",
+      "password": "$2a$10$3XntF4TiSCCw1xwGrnQ6buNm2S8S2JD0R4jC/Le2pbDDRJ1WdE4YW",
+      "id": 1
+    },
+    {
+      "email": "axe1@gmail.com",
+      "password": "$2a$10$gn63J4nlx04IE1zYBf2Uv.9C.n.24lMP7ZsJh3iWhE0FeD6izWa3e",
+      "id": 2
+    },
+    {
+      "email": "ejemplo@gmail.com",
+      "password": "$2a$10$PiIIqPvuYWPL79ZGcj4Fpu6yMfz4glDVO4H7gsaRsurdV2bdiwhZm",
+      "id": 3
+    },
+    {
+      "email": "pepe@gmail.com",
+      "password": "$2a$10$JXp7xWdX.aChJM0IYss6meh90yyGtl8W7dfSTFdIDDe9XQ7Yyc1oS",
+      "id": 4
+    }
+  ]
+}

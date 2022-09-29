@@ -2,11 +2,17 @@
 import {defineAsyncComponent} from 'vue'
 // import NavigationBar from './modules/shared/components/NavigationBar.vue'
 // import Home from '../src/components/Home.vue'
+// import Login from './components/administrator/login.vue'
+// import Dashboard from './components/client/dashboard.vue'
 
 export default {
   
+
+  //TODO:Version anterior
   components:{
-    NavigationBar: defineAsyncComponent(()=>import(/*webpackChunkName:"NavBar"*/'./modules/shared/components/NavigationBar.vue'))
+    // Login,
+    // Dashboard
+    //NavigationBar: defineAsyncComponent(()=>import(/*webpackChunkName:"NavBar"*/'./modules/shared/components/NavigationBar.vue'))
   }
 }
 
@@ -14,13 +20,10 @@ export default {
 
 <template>
 
-<NavigationBar />
-<router-view></router-view>
+  <router-view></router-view>
+
+
 </template>
-
-
-
-
 
 
 

@@ -2,8 +2,6 @@
 
 <div class="login">
 
-    <h1>REGISTER CLIENT</h1>
-
     <div class="Two">
 
         <img src="https://images.samsung.com/is/image/samsung/p6pim/pe/wf21t6500gv-pe/gallery/pe-wf6000tk-wf22t6500gvzs-wf21t6500gv-pe-455673837?$650_519_PNG$" width="700" height="500">
@@ -12,7 +10,7 @@
 
             <pv-card style="width: 25rem; margin-bottom: 2em">
                 <template #title>
-                    <h1>Register and joined now!</h1>
+                    <h1>Register Client!</h1>
                 </template>
                 <template #content>
                 
@@ -67,7 +65,7 @@ export default {
     },
     methods: {
         register(){
-            new usersServices().register(this.email,this.password).then(response=>console.log("USER CREATED"))
+            new usersServices().register(this.email,this.password,this.firstName,this.lastName).then(response=>console.log("USER CREATED"))
             this.$router.push("/")
         },
     }

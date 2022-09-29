@@ -2,8 +2,6 @@
 
 <div class="login">
 
-    <h1>REGISTER TECHNICIAN</h1>
-
     <div class="Two">
 
         <img src="https://images.samsung.com/is/image/samsung/p6pim/pe/wf21t6500gv-pe/gallery/pe-wf6000tk-wf22t6500gvzs-wf21t6500gv-pe-455673837?$650_519_PNG$" width="700" height="500">
@@ -12,11 +10,19 @@
 
             <pv-card style="width: 25rem; margin-bottom: 2em">
                 <template #title>
-                    <h1>Register and joined now!</h1>
+                    <h1>Register Technician!</h1>
                 </template>
                 <template #content>
                 
                     <div class="flex flex-column">
+                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
+                            <pv-input-text type="text" v-model="firstName" placeholder="FirstName"></pv-input-text>
+                        </div>
+
+                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
+                            <pv-input-text type="text" v-model="lastName" placeholder="LastName"></pv-input-text>
+                        </div>
+
                         <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
                             <pv-input-text type="text" v-model="email" placeholder="Put your email"></pv-input-text>
                         </div>
@@ -51,12 +57,15 @@ export default {
     data(){
         return{
             email:"",
+            firstName:"",
+            lastName:"",
             password:""
+
         }
     },
     methods: {
         register(){
-            new usersServices().register(this.email,this.password).then(response=>console.log("USER CREATED"))
+            new usersServices().register(this.email,this.password,this.firstName,this.lastName).then(response=>console.log("USER CREATED"))
             this.$router.push("/")
         },
     }

@@ -8,6 +8,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "primeflex": "^3.2.1",
     "primevue": "^3.17.0",
     "vue": "^3.2.38",
@@ -20,6 +21,6 @@
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.7.1",
-    "vite": "^3.0.9"
+    "vite": "^3.1.4"
   }
 }

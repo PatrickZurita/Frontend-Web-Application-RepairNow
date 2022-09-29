@@ -2,34 +2,33 @@
 
 <div class="login">
 
-    <h1>REGISTER</h1>
+    <h1>Choose Your Rol</h1>
 
     <div class="Two">
 
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/pe/wf21t6500gv-pe/gallery/pe-wf6000tk-wf22t6500gvzs-wf21t6500gv-pe-455673837?$650_519_PNG$" width="700" height="500">
-
         <div class="cards">
 
-            <pv-card style="width: 25rem; margin-bottom: 2em">
+            <pv-card>
                 <template #title>
-                    <h1>Register and joined now!</h1>
+                    Client!
                 </template>
                 <template #content>
-                
-                    <div class="flex flex-column">
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-input-text type="text" v-model="email" placeholder="Put your email"></pv-input-text>
-                        </div>
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-input-text type="text" v-model="password" placeholder="Write your Password"></pv-input-text>
-                            <!-- <pv-password v-model="password" :feedback="false" placeholder="Password"></pv-password> -->
-                        </div>
+                    You are a client
+                </template>
+                <template #footer>
+                    <pv-button label="Register" @click="redirectRegisterClient"></pv-button>
+                </template>
+            </pv-card>
 
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-button label="Register" @click="register"></pv-button>
-                        </div>
-                        
-                    </div>
+            <pv-card>
+                <template #title>
+                   Technician!
+                </template>
+                <template #content>
+                    You are a Technician
+                </template>
+                <template #footer>
+                    <pv-button label="Register" @click="redirectRegisterTechnician"></pv-button>
                 </template>
             </pv-card>
 
@@ -44,20 +43,19 @@
 </template>
 
 <script>
-import { usersServices } from '@/services/user-services'
 
 export default {
 
     data(){
         return{
-            email:"",
-            password:""
         }
     },
     methods: {
-        register(){
-            new usersServices().register(this.email,this.password).then(response=>console.log("USER CREATED"))
-            this.$router.push("/")
+        redirectRegisterClient(){
+            this.$router.push("/registerClient")
+        },
+        redirectRegisterTechnician(){
+            this.$router.push("/registerTechnician")
         },
     }
 
@@ -65,9 +63,5 @@ export default {
 </script>
 
 <style scoped>
-
-.Two{
-    display: flex;
-}
 
 </style>

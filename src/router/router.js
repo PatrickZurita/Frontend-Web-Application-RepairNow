@@ -21,6 +21,15 @@ const routes = [
         component: ()=>import(/*webpackChunkName:"Register"*/'../components/administrator/register.vue')
      },
      {
+        path: '/registerClient',
+        component: ()=>import(/*webpackChunkName:"Register"*/'../components/administrator/registerClient.vue')
+     },
+     {
+        path: '/registerTechnician',
+        component: ()=>import(/*webpackChunkName:"Register"*/'../components/administrator/registerTechnician.vue')
+     },
+
+     {
         path: '/login',
         component: ()=>import(/*webpackChunkName:"Login"*/'../components/administrator/login.vue')
      },
@@ -28,6 +37,7 @@ const routes = [
         path: '/dashboard',
         component: ()=>import(/*webpackChunkName:"DashBoard"*/'../components/client/dashboard.vue')
      }
+     
     // { 
     //     path: '/MyAppliance', 
     //     component: ()=>import(/*webpackChunkName:"MyApplianceCliente"*/'../modules/Client/components/MyAppliance.vue')

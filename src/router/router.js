@@ -36,24 +36,24 @@ const routes = [
      {
         path: '/dashboard',
         component: ()=>import(/*webpackChunkName:"DashBoard"*/'../components/client/dashboard.vue')
+     },
+     {
+        path: '/technician',
+        component: ()=>import(/*webpackChunkName:"ProfileTechnician"*/'../components/technician/profile-technician.vue')
+     },
+     {
+        path: '/technician/profile',
+        component: ()=>import(/*webpackChunkName:"ProfileTechnician"*/'../components/technician/profile-technician.vue')
+     },
+     {
+        path: '/technician/route',
+        component: ()=>import(/*webpackChunkName:"RouteTechnician"*/'../components/technician/route-technician.vue')
+     },
+     {
+        path: '/technician/reports',
+        component: ()=>import(/*webpackChunkName:"RouteTechnician"*/'../components/technician/reports-technician.vue')
      }
-     
-    // { 
-    //     path: '/MyAppliance', 
-    //     component: ()=>import(/*webpackChunkName:"MyApplianceCliente"*/'../modules/Client/components/MyAppliance.vue')
-    // },
-    // { 
-    //     path: '/MyPlan',
-    //     component: ()=>import(/*webpackChunkName:"M"yPlanClient"*/'../modules/Client/components/MyPlan.vue')
-    //  },
-    // { 
-    //     path: '/Notifications',
-    //      component: ()=>import(/*webpackChunkName:"NotificationsClient"*/'../modules/Client/components/Notifications.vue')
-    // },
-    // { 
-    //     path: '/Profile',
-    //     component: ()=>import(/*webpackChunkName:"ProfileClient"*/'../modules/Client/components/Profile.vue')
-    // },
+
     // {
     //     path: '/:pathMatch(.*)*', //TODO: Dirección donde será enviado el usuario cuando coloque cualquier cosa que no sea uno definido
     //     component: ()=>import(/*webpackChunkName:"NotPageFound"*/'../modules/shared/pages/NoPageFound.vue')

@@ -64,7 +64,7 @@ export default {
     },
     methods: {
         register(){
-            new usersServices().register(this.email,this.password,this.firstName,this.lastName).then(response=>console.log("USER CREATED"))
+            new usersServices().register(this.email,this.password,this.firstName,this.lastName,"client").then(response=>console.log("USER CREATED"))
             this.$router.push("/")
         },
     }

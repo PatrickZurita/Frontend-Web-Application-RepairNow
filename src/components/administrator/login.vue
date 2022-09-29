@@ -54,20 +54,38 @@ export default {
     data(){
         return{
             email:"",
-            password:""
+            password:"",
         }
     },
     methods: {            
         login(){
+
             new usersServices().login(this.email,this.password)
             .then(response=>{
                 console.log("USER LOGIN CORRECTLY")
-                this.$router.push('/dashboard');
                 sessionStorage.setItem("jwt",response.data.accessToken)
+
+                const typeUser=response.data.user.type
+
+                console.log(typeUser)
+
+                if(typeUser=="technician"){
+                    this.$router.push('/technician');
+                }else{
+                    this.$router.push('/dashboard');
+                }
+
             })
             .catch(response=>{
                 alert("Unregistered or misspelled user")
             })
+
+            // new usersServices().getUserInformation()
+            // .then(response=>{
+            //     console.log()
+            // })
+
+
         },
         redirect(){
             this.$router.push("/register")

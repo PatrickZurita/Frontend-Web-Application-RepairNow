@@ -1,13 +1,26 @@
 import axios from 'axios'
 
+const httpSignal=axios.create(
+    {
+    baseURL:"http://localhost:3000/660/",
+    headers:{
+        "Authorization": "Bearer "+ sessionStorage.getItem("jwt")
+    }
+})
+
 export class usersServices {
 
-  register = (email,password,firstName,lastName) => {
+  getUserInformation=()=>{
+    return httpSignal.get("users")
+  }
+
+  register = (email,password,firstName,lastName,type) => {
     return axios.post("http://localhost:3000/register",{
       email,
       password,
       firstName,
-      lastName
+      lastName,
+      type
     })
   }
 

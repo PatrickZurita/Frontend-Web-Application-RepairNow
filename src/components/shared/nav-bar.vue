@@ -52,9 +52,9 @@ export default {
         return {
             number:1,
             items: [
-                {label: 'Home', icon: 'pi pi-fw pi-home'},
-                {label: 'Sign Up Now', icon: 'pi pi-fw pi-calendar'},
-                {label: 'Loggin', icon: 'pi pi-fw pi-pencil'},
+                {label: 'Home', icon: 'pi pi-fw pi-home', to: '/'},
+                {label: 'Sign Up Now', icon: 'pi pi-fw pi-calendar', to: '/register'},
+                {label: 'Loggin', icon: 'pi pi-fw pi-pencil',to: '/login'},
             ]
         }
     },

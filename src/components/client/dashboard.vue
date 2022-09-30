@@ -1,11 +1,14 @@
 <template>
-  <h1>Dashboard client</h1>
+  <div class="dashboard">
+
+    <h1>Welcome!</h1>
+
+  </div>
+  
 </template>
 
 <script>
-export default {
 
-}
 </script>
 
 <style>

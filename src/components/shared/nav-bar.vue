@@ -1,5 +1,5 @@
 <template>
-    <TabMenu class="topnav" :model="items" />
+    <pv-TabMenu class="topnav" :model="items" />
 
 
     <!-- <pv-toolbar>

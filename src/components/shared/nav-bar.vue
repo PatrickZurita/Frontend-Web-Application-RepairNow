@@ -2,7 +2,7 @@
     <TabMenu class="topnav" :model="items" />
 
 
-    <pv-toolbar>
+    <!-- <pv-toolbar>
         <template #start>
             <h1>REPAIR NOW</h1>
         </template>
@@ -42,7 +42,7 @@
             </div>
             
         </template>
-    </pv-toolbar>
+    </pv-toolbar> -->
     
 </template>
 

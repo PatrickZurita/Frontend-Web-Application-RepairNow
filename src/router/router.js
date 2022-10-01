@@ -14,7 +14,7 @@ import {createRouter,createWebHistory} from "vue-router"
 const routes = [
     { 
         path: '/',
-        component: ()=>import(/*webpackChunkName:"Home"*/'../components/shared/home.vue')
+        component: ()=>import(/*webpackChunkName:"Home"*/'../components/shared/login.vue')
      },
      {
         path: '/register',

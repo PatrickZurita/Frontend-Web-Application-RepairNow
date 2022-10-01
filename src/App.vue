@@ -1,33 +1,20 @@
 <script>
-import {defineAsyncComponent} from 'vue'
+import Login from './components/shared/login.vue'
 
 export default {
-
-  //TODO:Version anterior
-  data(){
-    return{
-    }
-  },
-  components:{
-    NavegationBar: defineAsyncComponent(()=>import(/*webpackChunkName:"NavegationBar"*/'./components/shared/nav-bar.vue'))
-  }
+  components:{  Login  }
 }
 
 </script>
 
 <template>
-
-  <div class="main">
-    <NavegationBar />
-    <router-view></router-view>
-  </div>
-
+  <Login />
 </template>
 
 
 
 <style scoped>
-header {
+/* header {
   line-height: 1.5;
 }
 
@@ -52,5 +39,5 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
+} */
 </style>

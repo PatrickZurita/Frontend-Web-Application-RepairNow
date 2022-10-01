@@ -1,48 +1,48 @@
 <template>
 
-<div class="login">
-
-    <div class="Two">
-
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/pe/wf21t6500gv-pe/gallery/pe-wf6000tk-wf22t6500gvzs-wf21t6500gv-pe-455673837?$650_519_PNG$" width="700" height="500">
-
-        <div class="cards">
-
-            <pv-card style="width: 25rem; margin-bottom: 2em">
-                <template #title>
-                    <h1>Login on Repair Now</h1>
-                </template>
-                <template #content>
-                
-                    <div class="flex flex-column">
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-input-text type="text" v-model="email" placeholder="Email"></pv-input-text>
-                        </div>
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-password v-model="password" :feedback="false" placeholder="Password"></pv-password>
-                        </div>
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-button label="Log In" @click="login"></pv-button>
-                        </div>
-
-                    </div>
-                </template>
-            </pv-card>
+<body class="flex flex-row align-items-center">
 
 
-            <pv-card style="width: 25rem; margin-bottom: 2em">
-                <template #title>
-                </template>
-                <template #content>
-                    Don't have an account? <span class="SignUp" style="color:blue" @click="redirect">Sign Up!</span>
-                </template>
-            </pv-card>
+    <div class="imgBx">
 
-        </div>
+            <img class="w-full"
+            src="https://www.adulteducationworks.com/wp-content/uploads/2018/01/Technician-Adult-Aducation-Works2-1080x675.jpeg">
 
     </div>
 
-</div>
+    <pv-card class="login-card w-11 m-auto text-center border-round-sm">
+
+            <template #title>
+                Repair  Now
+            </template>
+
+
+            <template #content>
+
+                <div class="form-container flex flex-column gap-5 text-center" >
+
+                    <div class="first-part flex flex-column justify-content-center w-9 m-auto gap-3 ">
+
+                        <pv-input-text class="flex justify-content-center" type="text" v-model="value" placeholder="Email" />
+                        <pv-input-text class="flex justify-content-center" type="password" v-model="value" placeholder="Password" toggleMask  />
+                        <pv-button class="flex justify-content-center">GO!</pv-button>
+                    </div>
+
+                    <div class="second-part flex flex-column gap-4">
+                        <p>Don't have an account? <span>Sign Up Now!</span></p>
+                        <p><span>About</span>|<span>Contact</span></p>
+                    </div>
+
+                
+                </div>
+                
+            </template>
+
+    </pv-card>
+    
+
+
+</body>
 
 </template>
 
@@ -97,12 +97,75 @@ export default {
 
 <style scoped>
 
-.Two{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:#F0F2F5;
     display: flex;
+    min-height: 100vh;
 }
-.SignUp{
-    cursor: pointer;
-    size: bold;
+
+.imgBx{
+    display: none;
 }
+
+.login-card{
+    box-shadow: 5px 10px 8px #888888;
+}
+
+
+/* section .imgBx:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg,#1e7de9,#03202e);
+    z-index: 1;
+    mix-blend-mode: screen;
+} */
+
+
+/* .responsive {
+  width: 100%;
+  height: auto;
+}
+
+@media(min-width:0px){
+
+    .container-login{
+    margin-top: 6rem;
+    }
+    .container-image{
+        display: none;
+    }
+
+}
+
+@media(min-width:500px){
+
+    .container-login{
+    margin-top: 14rem;
+    }
+
+}
+
+@media(min-width:768px){
+
+    .container-login{
+    margin-top: 14rem;
+    }
+    .container-image{
+        display: flex;
+        width:60%
+    }
+
+} */
+
 
 </style>

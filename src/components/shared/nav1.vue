@@ -1,7 +1,7 @@
 <template>
 
     <pv-TabMenu class="topnav" :model="items" />
-    <button @click="$emit('change')">Cambia!</button>
+    <!-- <button @click="$emit('change')">Cambia!</button> -->
     
 </template>
 

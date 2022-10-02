@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <Login />
+  <router-view></router-view>
 </template>
 
 

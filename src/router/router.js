@@ -1,11 +1,4 @@
 import {createRouter,createWebHistory} from "vue-router"
-/*Componenets*/
-// import Home from '../modules/shared/components/Home.vue'
-// // import NavigationBar from '../modules/shared/components/NavigationBar.vue'
-// import MyAppliance from '../modules/Client/components/MyAppliance.vue'
-// import MyPlan from '../modules/Client/components/MyPlan.vue'
-// import Notifications from '../modules/Client/components/Notifications.vue'
-// import Profile from '../modules/Client/components/Profile.vue'
 
 //TODO: Evitemos cargar todo de golpe cuando inicie la aplicación, puede causar demora
 //En su lugar, utilizaremos  Lazy Load (Carga perezosa) para que la aplicación descargue 

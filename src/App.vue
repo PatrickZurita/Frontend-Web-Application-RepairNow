@@ -1,9 +1,4 @@
 <script>
-import Login from './components/shared/login.vue'
-
-export default {
-  components:{  Login  }
-}
 
 </script>
 

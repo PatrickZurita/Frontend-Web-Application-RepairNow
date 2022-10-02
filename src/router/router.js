@@ -7,11 +7,11 @@ import {createRouter,createWebHistory} from "vue-router"
 const routes = [
     { 
         path: '/',
-        component: ()=>import(/*webpackChunkName:"Home"*/'../components/shared/login.vue')
+        component: ()=>import(/*webpackChunkName:"Home"*/'../views/shared/login.vue')
      },
      {
         path: '/register',
-        component: ()=>import(/*webpackChunkName:"Register"*/'../components/shared/register.vue')
+        component: ()=>import(/*webpackChunkName:"Register"*/'../views/shared/register.vue')
      },
      {
         path: '/registerClient',
@@ -23,7 +23,7 @@ const routes = [
      },
      {
         path: '/login',
-        component: ()=>import(/*webpackChunkName:"Login"*/'../components/shared/login.vue')
+        component: ()=>import(/*webpackChunkName:"Login"*/'../views/shared/login.vue')
      },
     //  {
     //     path: '/technician',

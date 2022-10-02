@@ -1,44 +1,48 @@
 <template>
 
-<body class="flex flex-row align-items-center">
+<body class="flex flex-row align-items-center justify-content-center">
+
+    <div class="container flex align-items-center">
+
+        <div class="imgBx">
+
+            <img class="w-full" src="@/assets/img/wallpaper_technician.png">
+
+        </div>
+
+        <pv-card class="login-card m-auto text-center border-round-sm flex align-items-center justify-content-center">
+
+                <template #title>
+                    <img class="imgLogo" src="@/assets/img/logo_repair.png" alt="logo_repair.png">
+                </template>
 
 
-    <div class="imgBx">
+                <template #content>
 
-            <img class="w-full"
-            src="https://www.adulteducationworks.com/wp-content/uploads/2018/01/Technician-Adult-Aducation-Works2-1080x675.jpeg">
+                    <div class="form-container flex flex-column gap-5 text-center" >
+
+                        <div class="first-part flex flex-column justify-content-center w-9 m-auto gap-3 ">
+
+                            <pv-input-text class="input-email flex justify-content-center" type="text" v-model="value" placeholder="Email" />
+                            <pv-input-text class="input-password flex justify-content-center" type="password" v-model="value" placeholder="Password" toggleMask  />
+                            <pv-button class="flex justify-content-center">LOG IN</pv-button>
+                        </div>
+
+                        <div class="second-part flex flex-column gap-4">
+                            <p>Don't have an account? <span>Sign Up Now!</span></p>
+                            <p><span>About</span>    |    <span>Contact</span></p>
+                        </div>
+
+
+                    </div>
+
+                </template>
+
+        </pv-card>
+
 
     </div>
-
-    <pv-card class="login-card w-11 m-auto text-center border-round-sm">
-
-            <template #title>
-                Repair  Now
-            </template>
-
-
-            <template #content>
-
-                <div class="form-container flex flex-column gap-5 text-center" >
-
-                    <div class="first-part flex flex-column justify-content-center w-9 m-auto gap-3 ">
-
-                        <pv-input-text class="flex justify-content-center" type="text" v-model="value" placeholder="Email" />
-                        <pv-input-text class="flex justify-content-center" type="password" v-model="value" placeholder="Password" toggleMask  />
-                        <pv-button class="flex justify-content-center">GO!</pv-button>
-                    </div>
-
-                    <div class="second-part flex flex-column gap-4">
-                        <p>Don't have an account? <span>Sign Up Now!</span></p>
-                        <p><span>About</span>|<span>Contact</span></p>
-                    </div>
-
-                
-                </div>
-                
-            </template>
-
-    </pv-card>
+    
     
 
 
@@ -96,76 +100,28 @@ export default {
 </script>
 
 <style scoped>
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
     background:#F0F2F5;
     display: flex;
     min-height: 100vh;
 }
+.imgBx{display: none;}
+.imgLogo{width: 40%;}
+.login-card{box-shadow: 5px 10px 8px #888888;width: 80%;}
+.input-email,.input-password{background: #FAFAFA;}
 
-.imgBx{
-    display: none;
+@media(min-width:580px){
+    .login-card{width: 100%;}
 }
-
-.login-card{
-    box-shadow: 5px 10px 8px #888888;
+@media(min-width: 968px){
+    .imgBx{display: flex; width: 50%; height: 50%;}
+    .login-card{width: 30%; height: 30rem;}
 }
-
-
-/* section .imgBx:before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(225deg,#1e7de9,#03202e);
-    z-index: 1;
-    mix-blend-mode: screen;
-} */
-
-
-/* .responsive {
-  width: 100%;
-  height: auto;
-}
-
-@media(min-width:0px){
-
-    .container-login{
-    margin-top: 6rem;
-    }
-    .container-image{
-        display: none;
-    }
-
-}
-
-@media(min-width:500px){
-
-    .container-login{
-    margin-top: 14rem;
-    }
-
-}
-
-@media(min-width:768px){
-
-    .container-login{
-    margin-top: 14rem;
-    }
-    .container-image{
-        display: flex;
-        width:60%
-    }
-
-} */
 
 
 </style>

@@ -1,5 +1,4 @@
 <template>
-
 <body>
     <div class="flex flex-row align-items-center justify-content-center w-full">
 
@@ -35,7 +34,6 @@
     </div>
 
 </body>
-
 </template>
 
 <script>

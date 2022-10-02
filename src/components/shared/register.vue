@@ -1,51 +1,51 @@
 <template>
+<body>
 
-<div class="login">
+    <div class="container flex flex-column justify-content-center align-items-center m-auto w-10">
 
-    <h1>Choose Your Rol</h1>
+        <div class="principal-container flex flex-column justify-content-center align-items-center m-auto w-full ">
 
-    <div class="Two">
+            <h1 class="mb-5">You are...</h1>
 
-        <div class="cards">
-            <div class="column">
-                <pv-card class="card">
+            <div class="cards-container flex justify-content-center align-items-center gap-4 text-center">
+
+                <pv-card class="card w-full">
+                    <template #header>
+                        <img class="w-full" src="@/assets/img/client_watching.webp"/>
+                    </template>
                     <template #title>
-                        Client!
+                        Client
                     </template>
                     <template #content>
-                        You are a client
+                        <p>Busca a nuestros técnicos calificados que solucionen tus problemas</p>
                     </template>
                     <template #footer>
-                        <img src="@/assets/img/user.png" width="100">
-                        <pv-button label="Register" @click="redirectRegisterClient"></pv-button>
+                        <pv-button class="button-register" label="Register" @click="redirectRegisterClient"></pv-button>
                     </template>
                 </pv-card>
+
+                <pv-card class="card w-full">
+                    <template #header>
+                        <img class="w-full" src="@/assets/img/technician_reapairing.jpg"/>
+                    </template>
+                    <template #title>
+                        Technician
+                    </template>
+                    <template #content>
+                        <p>Soluciona problemas y encuentra nuevos clientes</p>
+                    </template>
+                    <template #footer>
+                        <pv-button class="button-register" label="Register" @click="redirectRegisterTechnician"></pv-button>
+                    </template>
+                </pv-card>
+
             </div>
-
-            <div class="column">
-            <pv-card class="card">
-                <template #title>
-                   Technician!
-                </template>
-                <template #content>
-                    You are a Technician
-                </template>
-                <template #footer>
-                    <img src="@/assets/img/technician.png" width="100">
-                    <pv-button label="Register" @click="redirectRegisterTechnician"></pv-button>
-                </template>
-            </pv-card>
-            </div>
-
-
-
-        </div>
-
-
 
     </div>
 
-</div>
+    </div>
+
+</body>
 
 </template>
 
@@ -70,27 +70,35 @@ export default {
 </script>
 
 <style scoped>
-* {
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-.cards {margin: 0 -5px;}
-
-.cards::after{
-    content: "";
-    display: table;
-    clear: both;
+body{
+    background:#F0F2F5;
+    display: flex;
+    min-height: 100vh;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-    padding: 16px;
-    text-align: center;
-    background-color: #f1f1f1;
+.cards-container{
+    flex-direction: column;
+}
 
-  }
-  .column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
-  }
+.button-register{
+    padding: 1rem 4rem;
+}
+
+.button-register{transition: all 0.5s;cursor: pointer;}
+.button-register{cursor: pointer;transition: 0.5s;}
+.button-register:after {content: '✓';position: absolute;opacity: 0;  top: 14px;right: -40px;transition: 0.5s;}
+.button-register:hover{padding-right: 50px;padding-left:30px;}
+.button-register:hover:after {opacity: 1;right: 25px;}
+
+@media(min-width: 768px){
+    .cards-container{
+        flex-direction: row;
+    }
+}
+
 </style>

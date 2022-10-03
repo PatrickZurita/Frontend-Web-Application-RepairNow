@@ -1,53 +1,50 @@
 <template>
 
-<div class="login">
+<body>
 
-    <div class="Two">
+        <div class="flex flex-row align-items-center justify-content-center w-full">
 
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/pe/wf21t6500gv-pe/gallery/pe-wf6000tk-wf22t6500gvzs-wf21t6500gv-pe-455673837?$650_519_PNG$" width="700" height="500">
+        <div class="container flex align-items-center">
 
-        <div class="cards">
+            <div class="imgBx">
+                <img class="w-full" src="@/assets/img/register_technician.png">
+            </div>
 
-            <pv-card style="width: 25rem; margin-bottom: 2em">
-                <template #title>
-                    <h1>Register Technician!</h1>
-                </template>
-                <template #content>
-                
-                    <div class="flex flex-column">
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-input-text type="text" v-model="firstName" placeholder="FirstName"></pv-input-text>
+            <pv-card class="login-card m-auto text-center border-round-sm flex align-items-center justify-content-center">
+
+                    <template #title>
+                        <img class="imgLogo" src="@/assets/img/logo_repair.png" alt="logo_repair.png">
+                    </template>
+
+                    <template #subtitle>
+                        <p>Register now and be part of our family of quality technicians</p>
+                    </template>
+
+                    <template #content>
+                        <div class="form-container flex flex-column gap-5 text-center" >
+                            <div class="first-part flex flex-column justify-content-center w-9 m-auto gap-3 ">
+                                <pv-input-text type="text" v-model="firstName" placeholder="FirstName"></pv-input-text>
+                                <pv-input-text type="text" v-model="lastName" placeholder="LastName"></pv-input-text>
+                                <pv-input-text type="text" v-model="email" placeholder="Put your email"></pv-input-text>
+                                <pv-input-text type="text" v-model="password" placeholder="Write your Password"></pv-input-text>
+                                <pv-button class="register-button flex justify-content-center" @click="register">Register Now!</pv-button>
+                            </div>
+                            <div class="second-part flex flex-column gap-4">
+                                <p>By signing up, you agree to our Terms, Privacy Policy and Cookies Policy.</p>
+                            </div>
                         </div>
-
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-input-text type="text" v-model="lastName" placeholder="LastName"></pv-input-text>
-                        </div>
-
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-input-text type="text" v-model="email" placeholder="Put your email"></pv-input-text>
-                        </div>
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-input-text type="text" v-model="password" placeholder="Write your Password"></pv-input-text>
-                            <!-- <pv-password v-model="password" :feedback="false" placeholder="Password"></pv-password> -->
-                        </div>
-
-                        <div class="flex align-items-center justify-content-center h-4rem border-round m-2">
-                            <pv-button label="Register" @click="register"></pv-button>
-                        </div>
-                        
-                    </div>
-                </template>
+                    </template>
             </pv-card>
 
         </div>
 
-        
-
     </div>
 
-</div>
+</body>
+
 
 </template>
+
 
 <script>
 import { usersServices } from '@/services/user-services'
@@ -75,8 +72,40 @@ export default {
 
 <style scoped>
 
-.Two{
-    display: flex;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+body{
+    background:#F0F2F5;
+    display: flex;
+    min-height: 100vh;
+}
+
+.imgBx{display: none;}
+.imgLogo{width: 40%;}
+.login-card{box-shadow: 5px 10px 8px #888888;width: 80%;}
+.input-email,.input-password{background: #FAFAFA;}
+.register-button{transition: all 0.5s;cursor: pointer;box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);}
+.register-button{cursor: pointer;transition: 0.5s;}
+.register-button:after {content: '»';position: absolute;opacity: 0;  top: 14px;right: -20px;transition: 0.5s;}
+.register-button:hover{padding-right: 24px;padding-left:8px;}
+.register-button:hover:after {opacity: 1;right: 10px;}
+.sign-up:hover{
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.1s;
+}
+
+@media(min-width:580px){
+    .login-card{width: 100%;}
+}
+@media(min-width: 968px){
+    .imgBx{display: flex; width: 50%; height: 50%;}
+    .login-card{width: 30%; height: 30rem;}
+}
+
 
 </style>

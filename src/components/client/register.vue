@@ -104,9 +104,5 @@ body{
     .login-card{width: 30%; height: 30rem;}
 }
 
-/* 
-.Two{
-    display: flex;
-} */
 
 </style>

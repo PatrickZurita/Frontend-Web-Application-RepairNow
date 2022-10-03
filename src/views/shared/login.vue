@@ -5,13 +5,13 @@
         <div class="container flex align-items-center">
 
             <div class="imgBx">
-                <img class="w-full" src="@/assets/img/wallpaper_technician.png">
+                <img class="w-full" src="@/assets/img/login-images/wallpaper_technician.png" alt="appliances">
             </div>
 
             <pv-card class="login-card m-auto text-center border-round-sm flex align-items-center justify-content-center">
 
                     <template #title>
-                        <img class="imgLogo" src="@/assets/img/logo_repair.png" alt="logo_repair.png">
+                        <img class="imgLogo" src="@/assets/img/text-logos/logo_repair.png" alt="logo_repair.png">
                     </template>
 
                     <template #content>

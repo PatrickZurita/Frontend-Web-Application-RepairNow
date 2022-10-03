@@ -11,7 +11,7 @@
 
                 <pv-card class="card w-full">
                     <template #header>
-                        <img class="w-full" src="@/assets/img/client_watching.webp"/>
+                        <img class="w-full" src="@/assets/img/register-images/client_watching.webp" alt="two persons watching a freezer"/>
                     </template>
                     <template #title>
                         Client
@@ -26,7 +26,7 @@
 
                 <pv-card class="card w-full">
                     <template #header>
-                        <img class="w-full" src="@/assets/img/technician_reapairing.jpg"/>
+                        <img class="w-full" src="@/assets/img/register-images/technician_reapairing.jpg" alt="Technician repairing an appliance"/>
                     </template>
                     <template #title>
                         Technician

@@ -34,6 +34,11 @@
                             </div>
                         </div>
                     </template>
+
+                    <template #footer>
+                        <p>Do you have an account?<span class="login text-blue-600" @click="redirectToLogin">Log in</span></p>
+                    </template>
+
             </pv-card>
 
         </div>
@@ -63,6 +68,9 @@ export default {
             new usersServices().register(this.email,this.password,this.firstName,this.lastName,"client").then(response=>console.log("USER CREATED"))
             this.$router.push("/")
         },
+        redirectToLogin(){
+            this.$router.push("/")
+        }
     }
 
 }
@@ -90,7 +98,7 @@ body{
 .register-button:after {content: '»';position: absolute;opacity: 0;  top: 14px;right: -20px;transition: 0.5s;}
 .register-button:hover{padding-right: 24px;padding-left:8px;}
 .register-button:hover:after {opacity: 1;right: 10px;}
-.sign-up:hover{
+.login:hover{
     cursor: pointer;
     font-weight: bold;
     transition: 0.1s;
@@ -101,7 +109,7 @@ body{
 }
 @media(min-width: 968px){
     .imgBx{display: flex; width: 50%; height: 50%;}
-    .login-card{width: 30%; height: 30rem;}
+    .login-card{width: 30%; height: 35rem;}
 }
 
 

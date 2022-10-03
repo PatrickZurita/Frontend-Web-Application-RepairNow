@@ -1,55 +1,92 @@
 import {createRouter,createWebHistory} from "vue-router"
 
-//TODO: Evitemos cargar todo de golpe cuando inicie la aplicación, puede causar demora
-//En su lugar, utilizaremos  Lazy Load (Carga perezosa) para que la aplicación descargue 
-// los componentes de acuerdo a lo que demande el cliente
+import Login from '../views/shared/login.vue'
+import Register from '../views/shared/register.vue'
+import RegisterClient from '../components/client/register.vue'
+import RegisterTechnician from '../components/technician/register.vue'
+
+//TODO:Solo cargaremos de primeras las vistas principales que se le muestren al principio al cliente (Login and Register), el resto será cargando mediante Lazy Load (carga perezosa) para que la aplicación descargue los componentes de acuerdo a lo que demande el cliente
 
 const routes = [
     { 
         path: '/',
-        component: ()=>import(/*webpackChunkName:"Home"*/'../views/shared/login.vue')
+        component: Login
      },
      {
-        path: '/register',
-        component: ()=>import(/*webpackChunkName:"Register"*/'../views/shared/register.vue')
+         path: '/login',
+         name: 'login',
+         component: Login
      },
      {
-        path: '/registerClient',
-        component: ()=>import(/*webpackChunkName:"RegisterClient"*/'../components/client/register.vue')
+         path: '/register',
+         name:'register',
+         component: Register
      },
      {
-        path: '/registerTechnician',
-        component: ()=>import(/*webpackChunkName:"RegisterTechnician"*/'../components/technician/register.vue')
+         path: '/registerclient',
+         name: 'register-client',
+         component: RegisterClient
      },
      {
-        path: '/login',
-        component: ()=>import(/*webpackChunkName:"Login"*/'../views/shared/login.vue')
-     },
-    //  {
-    //     path: '/technician',
-    //     component: ()=>import(/*webpackChunkName:"Technician"*/'../views/technician/technician.vue')
-    //  },
-     {
-        path: '/technician/profile',
-        component: ()=>import(/*webpackChunkName:"ProfileTechnician"*/'../components/technician/profile.vue')
+         path: '/registertechnician',
+         name:'register-technician',
+         component: RegisterTechnician
      },
      {
-        path: '/technician/profile/editProfile',
-        component: ()=>import(/*webpackChunkName:"ProfileTechnician"*/'../components/technician/edit-profile.vue')
-     },
-     {
-        path: '/technician/route',
-        component: ()=>import(/*webpackChunkName:"RouteTechnician"*/'../components/technician/route.vue')
-     },
-     {
-        path: '/technician/reports',
-        component: ()=>import(/*webpackChunkName:"RouteTechnician"*/'../components/technician/reports.vue')
-     },
-     {
-        path: '/dashboard',
-        component: ()=>import(/*webpackChunkName:"DashBoard"*/'../components/client/dashboard.vue')
-     },
-
+         path: '/client',
+         name:'client',
+         component: ()=>import(/*webpackChunkName:"ClientLayout"*/'../components/client/ClientLayout.vue'),
+            children:[
+               {
+                  path:'',
+                  name:'myappliance',
+                  component: ()=>import(/*webpackChunkName:"MyAppliance"*/'../views/Client/MyAppliance.vue')
+               },
+               {
+                  path:'/myplan',
+                  name:'myplan',
+                  component: ()=>import(/*webpackChunkName:"MyPlan"*/'../views/Client/MyPlan.vue')
+               },
+               {
+                  path:'/notifications',
+                  name:'client-notifications',
+                  component: ()=>import(/*webpackChunkName:"Notifications"*/'../views/Client/Notifications.vue')
+               },
+               {
+                  path:'/profile',
+                  name:'client-profile',
+                  component: ()=>import(/*webpackChunkName:"Profile"*/'../views/Client/Profile.vue')
+               },
+            ]
+      },
+      {
+         path: '/technician',
+         name:'technician',
+         component: ()=>import(/*webpackChunkName:"ClientLayout"*/'../components/technician/TechnicianLayout.vue'),
+            children:[
+               {
+                  path:'',
+                  name:'schedule',
+                  component: ()=>import(/*webpackChunkName:"MyAppliance"*/'../views/Technician/Schedule.vue')
+               },
+               {
+                  path:'/myreports',
+                  name:'myreports',
+                  component: ()=>import(/*webpackChunkName:"MyPlan"*/'../views/Technician/Reports.vue')
+               },
+               {
+                  path:'/notifications',
+                  name:'technician-notifications',
+                  component: ()=>import(/*webpackChunkName:"Notifications"*/'../views/Technician/Notifications.vue')
+               },
+               {
+                  path:'/profile',
+                  name:'technician-profile',
+                  component: ()=>import(/*webpackChunkName:"Profile"*/'../views/Technician/Profile.vue')
+               },
+            ]
+      },
+     
     // {
     //     path: '/:pathMatch(.*)*', //TODO: Dirección donde será enviado el usuario cuando coloque cualquier cosa que no sea uno definido
     //     component: ()=>import(/*webpackChunkName:"NotPageFound"*/'../modules/shared/pages/NoPageFound.vue')

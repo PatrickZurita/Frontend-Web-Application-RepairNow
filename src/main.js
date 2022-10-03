@@ -15,12 +15,14 @@ import Button from 'primevue/button';
 import InputMask from 'primevue/inputmask';
 import TabMenu from 'primevue/tabmenu';
 import DataView from 'primevue/dataview';
+import Menubar from 'primevue/menubar';
 
 
 const app = createApp(App);
 
 
 
+app.component('pv-MenuBar',Menubar)
 app.component('pv-TabMenu',TabMenu)
 app.component('pv-DataView',DataView)
 app.component('pv-input-mask',InputMask)

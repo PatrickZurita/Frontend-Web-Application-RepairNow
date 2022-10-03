@@ -1,5 +1,5 @@
 <template>
-    <h1>Profile Technician</h1>
+    <h1>PROFILE</h1>
 </template>
 
 <script>
@@ -7,3 +7,7 @@ export default {
 
 }
 </script>
+
+<style>
+
+</style>

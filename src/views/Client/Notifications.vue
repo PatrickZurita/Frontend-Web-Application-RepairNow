@@ -1,14 +1,11 @@
 <template>
-  <div class="dashboard">
-
-    <h1>Welcome!</h1>
-
-  </div>
-  
+    <h1>NOTIFICATIONS</h1>
 </template>
 
 <script>
+export default {
 
+}
 </script>
 
 <style>

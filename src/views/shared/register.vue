@@ -1,5 +1,5 @@
 <template>
-<body>
+<body>  
 
     <div class="container flex flex-column justify-content-center align-items-center m-auto w-10">
 
@@ -59,10 +59,10 @@ export default {
     },
     methods: {
         redirectRegisterClient(){
-            this.$router.push("/registerClient")
+            this.$router.push({name: "register-client"})
         },
         redirectRegisterTechnician(){
-            this.$router.push("/registerTechnician")
+            this.$router.push({name:"register-technician"})
         },
     }
 

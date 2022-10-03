@@ -11,7 +11,7 @@ export default {
     data() {
         return {
             items: [
-                {label: 'Home', icon: 'pi pi-fw pi-home', to: '/'},
+                {label: 'Home', icon: 'pi pi-fw pi-home', to: '/dashboard/'},
                 {label: 'Reggister', icon: 'pi pi-fw pi-calendar', to: '/register'},
                 {label: 'Loggin', icon: 'pi pi-fw pi-pencil',to: '/login'},
             ]

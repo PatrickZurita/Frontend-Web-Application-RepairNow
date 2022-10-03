@@ -17,13 +17,13 @@
                     <template #content>
                         <div class="form-container flex flex-column gap-5 text-center" >
                             <div class="first-part flex flex-column justify-content-center w-9 m-auto gap-3 ">
-                                <pv-input-text class="input-email flex justify-content-center" type="text" v-model="email" placeholder="Email" />
-                                <pv-input-text class="input-password flex justify-content-center" type="password" v-model="password" placeholder="Password" toggleMask  />
-                                <pv-button class="log-button flex justify-content-center" @click="login">LOG IN</pv-button>
+                                <pv-input-text class="input-email flex justify-content-center" type="text" v-model="email" :placeholder="$t('Email')" />
+                                <pv-input-text class="input-password flex justify-content-center" type="password" v-model="password" :placeholder="$t('Password')" toggleMask  />
+                                <pv-button class="log-button flex justify-content-center" @click="login">{{$t("LOG IN")}}</pv-button>
                             </div>
                             <div class="second-part flex flex-column gap-4">
-                                <p>Don't have an account? <span class="sign-up text-blue-600" @click="redirectToRegister">Sign Up Now!</span></p>
-                                <p><span>About</span>    |    <span>Contact</span></p>
+                                <p>{{$t("Don't have an account?")}} <span class="sign-up text-blue-600" @click="redirectToRegister">{{$t("Sign Up Now!")}}</span></p>
+                                <p><span>{{$t("About")}}</span>    |    <span>{{$t("Contact")}}</span></p>
                             </div>
                         </div>
                     </template>

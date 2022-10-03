@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import i18n from './internationalization/locales/i18n.js'
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
 import router from './router/router.js'
@@ -32,5 +33,6 @@ app.component('pv-input-text',InputText)
 app.component('pv-card',Card)
 app.component('pv-toolbar',Toolbar)
 app.use(PrimeVue);
+app.use(i18n)
 app.use(router);
 app.mount('#app');

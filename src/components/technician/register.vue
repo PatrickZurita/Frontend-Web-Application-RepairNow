@@ -17,26 +17,26 @@
                     </template>
 
                     <template #subtitle>
-                        <p>Register now and be part of our family of quality technicians</p>
+                        <p>{{$t("Register now and be part of our family of quality technicians")}}</p>
                     </template>
 
                     <template #content>
                         <div class="form-container flex flex-column gap-5 text-center" >
                             <div class="first-part flex flex-column justify-content-center w-9 m-auto gap-3 ">
-                                <pv-input-text type="text" v-model="firstName" placeholder="FirstName"></pv-input-text>
-                                <pv-input-text type="text" v-model="lastName" placeholder="LastName"></pv-input-text>
-                                <pv-input-text type="text" v-model="email" placeholder="Put your email"></pv-input-text>
-                                <pv-input-text type="text" v-model="password" placeholder="Write your Password"></pv-input-text>
-                                <pv-button class="register-button flex justify-content-center" @click="register">Register Now!</pv-button>
+                                <pv-input-text type="text" v-model="firstName" :placeholder="$t('FirstName')"></pv-input-text>
+                                <pv-input-text type="text" v-model="lastName"  :placeholder="$t('LastName')"></pv-input-text>
+                                <pv-input-text type="text" v-model="email" :placeholder="$t('Put your email')"></pv-input-text>
+                                <pv-input-text type="text" v-model="password" :placeholder="$t('Write your Password')"></pv-input-text>
+                                <pv-button class="register-button flex justify-content-center" @click="register">{{$t('Register Now')}}!</pv-button>
                             </div>
                             <div class="second-part flex flex-column gap-4">
-                                <p>By signing up, you agree to our Terms, Privacy Policy and Cookies Policy.</p>
+                                <p>{{$t("By signing up, you agree to our Terms, Privacy Policy and Cookies Policy.")}}</p>
                             </div>
                         </div>
                     </template>
 
                     <template #footer>
-                        <p>Do you have an account?<span class="login text-blue-600" @click="redirectToLogin">Log in</span></p>
+                        <p>{{$t("Do you have an account?")}} <span class="login text-blue-600" @click="redirectToLogin">{{$t("Log in")}}</span></p>
                     </template>
 
             </pv-card>

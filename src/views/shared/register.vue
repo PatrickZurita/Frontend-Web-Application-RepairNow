@@ -5,7 +5,7 @@
 
         <div class="principal-container flex flex-column justify-content-center align-items-center m-auto w-full ">
 
-            <h1 class="mb-5">You are...</h1>
+            <h1 class="mb-5">{{$t('You are')}}...</h1>
 
             <div class="cards-container flex justify-content-center align-items-center gap-4 text-center">
 
@@ -14,13 +14,13 @@
                         <img class="w-full" src="@/assets/img/register-images/client_watching.webp" alt="two persons watching a freezer"/>
                     </template>
                     <template #title>
-                        Client
+                        {{$t('Client')}}
                     </template>
                     <template #content>
-                        <p>Busca a nuestros técnicos calificados que solucionen tus problemas</p>
+                        <p>{{$t('Look for our qualified technicians to solve your problems')}}</p>
                     </template>
                     <template #footer>
-                        <pv-button class="button-register" label="Register" @click="redirectRegisterClient"></pv-button>
+                        <pv-button class="button-register" @click="redirectRegisterClient">{{$t('Register')}}</pv-button>
                     </template>
                 </pv-card>
 
@@ -29,13 +29,13 @@
                         <img class="w-full" src="@/assets/img/register-images/technician_reapairing.jpg" alt="Technician repairing an appliance"/>
                     </template>
                     <template #title>
-                        Technician
+                        {{$t('Technician')}}
                     </template>
                     <template #content>
-                        <p>Soluciona problemas y encuentra nuevos clientes</p>
+                        <p>{{$t('Solve problems and find your new customers')}}</p>
                     </template>
                     <template #footer>
-                        <pv-button class="button-register" label="Register" @click="redirectRegisterTechnician"></pv-button>
+                        <pv-button class="button-register" @click="redirectRegisterTechnician">{{$t('Register')}}</pv-button>
                     </template>
                 </pv-card>
 

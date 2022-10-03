@@ -2,7 +2,7 @@
 	<div>
 		<pv-MenuBar :model="items">
 			<template #start>
-				<img alt="logo" src="@/assets/img/logo_repair.png" height="20" class="mr-2">
+				<img alt="logo" src="@/assets/img/text-logos/logo_repair.png" height="20" class="mr-2">
 			</template>
 			<template #end>
                 

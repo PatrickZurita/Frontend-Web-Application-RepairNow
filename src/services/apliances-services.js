@@ -11,4 +11,9 @@ export class appliancesServices {
       return httpSignal.get("appliances")
     }
 
+    getApplianceWithId=(id)=>{
+      return httpSignal.get("appliances/"+id)
+    }
+    
+
 }

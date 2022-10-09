@@ -16,7 +16,7 @@
 
                         <img class="panel__image" :src="slotProps.data.urlImage" :alt="slotProps.data.brand+slotProps.data.name"/>
                         <div class="panel__text">{{slotProps.data.brand}} - {{slotProps.data.year}}</div>
-            			<pv-button class="panel__button" icon="pi pi-eye"></pv-button>
+            			<pv-button class="panel__button" icon="pi pi-eye" @click="redirectToUrlAppliance(slotProps.data.id)"></pv-button>
                         
             		</pv-Panel>
             	</div>
@@ -32,8 +32,6 @@ import {appliancesServices} from '@/services/apliances-services.js'
 export default {
     data(){
         return{
-            first:0,
-            totalItemsCount:null,
             appliances:null
         }
     },
@@ -43,10 +41,13 @@ export default {
     },
     mounted(){
         this.services.getAppliancesInformation().then(response=>{
-            console.log(response.data)
             this.appliances=response.data
-            this.totalItemsCount=response.data.length
         })
+    },
+    methods:{
+        redirectToUrlAppliance(id){
+            this.$router.push('/myappliance/'+id)
+        }
     }
 }
 </script>

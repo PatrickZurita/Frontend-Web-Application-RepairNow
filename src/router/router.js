@@ -40,7 +40,13 @@ const routes = [
                {
                   path:'',
                   name:'myappliance',
-                  component: ()=>import(/*webpackChunkName:"MyAppliance"*/'../views/Client/MyAppliance.vue')
+                  component: ()=>import(/*webpackChunkName:"MyAppliance"*/'../views/Client/MyAppliance.vue'),
+                  children:[
+                     {
+                        path:'/myappliance/:id',
+                        component:()=>import(/*webpackChunkName:"ViewAppliance"*/'../components/client/view-appliance.vue')
+                     }
+                  ]
                },
                {
                   path:'/myplan',

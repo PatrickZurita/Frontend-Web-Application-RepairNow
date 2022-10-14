@@ -54,7 +54,7 @@
 
 
 <script>
-import { usersServices } from '@/services/user-services'
+import { usersServices } from '@/core/services/user-services'
 
 export default {
 

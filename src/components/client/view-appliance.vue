@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {appliancesServices} from '@/services/apliances-services.js'
+import {appliancesServices} from '@/core/services/apliances-services.js'
 
 export default {
 

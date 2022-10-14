@@ -29,21 +29,27 @@
                 </div>
             </template>
             <template #footer>
-                <div class="foot ">
-                    <pv-button icon="pi pi-user-edit" class="p-button-rounded p-button-secondary"></pv-button>
+                <div class="foot">
+                    <pv-button icon="pi pi-user-edit" class="p-button-rounded p-button-secondary" @click="editProfile"></pv-button>
                 </div>
             </template>
         </pv-card>    
 
     </div>
-    
-    
+
+    <DialogProfile @closeDialogFormAlert="closeDialogForm" :display="dialogEditDisplay" :information="informationProfile" :closable="false"></DialogProfile>
+
+
 </template>
 
 <script>
-import { usersServices } from '@/services/user-services';
+import { usersServices } from '@/core/services/user-services';
+import DialogProfile from '@/components/client/Dialogs/client-edit-profile-dialog.vue'
 
 export default {
+    components:{
+      DialogProfile
+    },
     props:{
         id:{
             type:Number,
@@ -58,21 +64,35 @@ export default {
             phone:null,
             email:null,
             password:null,
+            dialogEditDisplay:false,
+            informationProfile:null
         }
     },
     services:null,
+    methods:{
+      openEditDialog(){this.dialogEditDisplay=true},
+      closeEditDialog(){this.dialogEditDisplay=false},
+      closeDialogForm(isChangeAnything){
+        if(isChangeAnything)console.log("Cambio algo , no se que xd")
+        this.closeEditDialog()
+      },
+      editProfile(){
+        console.log(this.informationProfile)
+        this.openEditDialog()
+      }
+    },
     created(){
         this.services= new usersServices()
     },
     mounted() {
         this.services.getUserInformationById(this.id.toString()).then(response=>{
-            const {firstName,lastName,address,phone,email,password}=response.data
-            this.name=firstName
-            this.lastName=lastName
-            this.address=address
-            this.phone=phone
-            this.email=email
-            this.password=password
+            this.informationProfile=response.data
+            this.name=this.informationProfile.firstName
+            this.lastName=this.informationProfile.lastName
+            this.address=this.informationProfile.address
+            this.phone=this.informationProfile.phone
+            this.email=this.informationProfile.email
+            this.password=this.informationProfile.password
         })
     }
 }

@@ -1,8 +1,8 @@
 import {createRouter,createWebHistory} from "vue-router"
 
-import Login from '../views/shared/login.vue'
-import Register from '../views/shared/register.vue'
-import RegisterClient from '../components/client/register.vue'
+import Login from '../views/shared/general-login.vue'
+import Register from '../views/shared/general-register.vue'
+import RegisterClient from '../components/client/General/client-register.vue'
 import RegisterTechnician from '../components/technician/register.vue'
 
 //TODO:Solo cargaremos de primeras las vistas principales que se le muestren al principio al cliente (Login and Register), el resto será cargando mediante Lazy Load (carga perezosa) para que la aplicación descargue los componentes de acuerdo a lo que demande el cliente
@@ -35,27 +35,27 @@ const routes = [
      {
          path: '/client/:id',
          name:'client',
-         component: ()=>import(/*webpackChunkName:"ClientLayout"*/'../components/client/ClientLayout.vue'),
+         component: ()=>import(/*webpackChunkName:"ClientLayout"*/'../components/client/Layout/ClientLayout.vue'),
             children:[
                {
                   path:'',
                   name:'myappliance',
-                  component: ()=>import(/*webpackChunkName:"MyAppliance"*/'../views/Client/MyAppliance.vue'),
+                  component: ()=>import(/*webpackChunkName:"MyAppliance"*/'../views/Client/client-my-appliance.vue'),
                },
                {
                   path:'myplan',
                   name:'myplan',
-                  component: ()=>import(/*webpackChunkName:"MyPlan"*/'../views/Client/MyPlan.vue')
+                  component: ()=>import(/*webpackChunkName:"MyPlan"*/'../views/Client/client-my-plan.vue')
                },
                {
                   path:'notifications',
                   name:'client-notifications',
-                  component: ()=>import(/*webpackChunkName:"Notifications"*/'../views/Client/Notifications.vue')
+                  component: ()=>import(/*webpackChunkName:"Notifications"*/'../views/Client/client-notifications.vue')
                },
                {
                   path:'profile',
                   name:'client-profile',
-                  component: ()=>import(/*webpackChunkName:"Profile"*/'../views/Client/Profile.vue'),
+                  component: ()=>import(/*webpackChunkName:"Profile"*/'../views/Client/client-profile.vue'),
                   props:(route)=>{
                      const id=Number(route.params.id)
                      return isNaN(id) ? {id:1}:{id:id}

@@ -9,19 +9,19 @@
         </section>
 
 
-        <pv-DataView :value="appliances" layout="grid" :paginator="true" :rows="8">
+        <pv-data-view :value="appliances" layout="grid" :paginator="true" :rows="8">
             <template #grid="slotProps">
             	<div class="contain-panel col-12 md:col-3">
-            		<pv-Panel class="panel" :header="slotProps.data.name">
+            		<pv-panel class="panel" :header="slotProps.data.name">
 
                         <img class="panel__image" :src="slotProps.data.urlImage" :alt="slotProps.data.brand+slotProps.data.name"/>
                         <div class="panel__text">{{slotProps.data.brand}} - {{slotProps.data.year}}</div>
             			<pv-button class="panel__button" icon="pi pi-eye" @click="redirectToUrlAppliance(slotProps.data.id)"></pv-button>
                         
-            		</pv-Panel>
+            		</pv-panel>
             	</div>
             </template>
-        </pv-DataView>
+        </pv-data-view>
 
     </div>
 </template>

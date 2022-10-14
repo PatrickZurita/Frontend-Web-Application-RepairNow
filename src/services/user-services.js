@@ -14,12 +14,14 @@ export class usersServices {
     return httpSignal.get("users")
   }
 
-  register = (email,password,firstName,lastName,type) => {
+  register = (email,password,firstName,lastName,address,phone,type) => {
     return axios.post("http://localhost:3000/register",{
       email,
       password,
       firstName,
       lastName,
+      address,
+      phone,
       type
     })
   }

@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<pv-MenuBar :model="items">
+		<pv-menu-bar :model="items">
 			<template #start>
 				<img alt="logo repair now" src="@/assets/img/text-logos/logo_repair.png" height="20" class="mr-2">
 			</template>
 			<template #end>
                 
 			</template>
-		</pv-MenuBar>
+		</pv-menu-bar>
 	</div>
 </template>
 

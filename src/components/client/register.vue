@@ -25,6 +25,8 @@
                             <div class="first-part flex flex-column justify-content-center w-9 m-auto gap-3 ">
                                 <pv-input-text type="text" v-model="firstName" :placeholder="$t('FirstName')"></pv-input-text>
                                 <pv-input-text type="text" v-model="lastName"  :placeholder="$t('LastName')"></pv-input-text>
+                                <pv-input-text type="text" v-model="address" :placeholder="$t('Put your address')"></pv-input-text>
+                                <pv-input-mask v-model="phone" mask="999999999" :placeholder="$t('Number Phone')"></pv-input-mask>
                                 <pv-input-text type="text" v-model="email" :placeholder="$t('Put your email')"></pv-input-text>
                                 <pv-input-text type="text" v-model="password" :placeholder="$t('Write your Password')"></pv-input-text>
                                 <pv-button class="register-button flex justify-content-center" @click="register">{{$t('Register Now')}}!</pv-button>
@@ -60,12 +62,15 @@ export default {
             email:"",
             firstName:"",
             lastName:"",
-            password:""
+            password:"",
+            address:"",
+            phone:"",
+
         }
     },
     methods: {
         register(){
-            new usersServices().register(this.email,this.password,this.firstName,this.lastName,"client").then(response=>console.log("USER CREATED"))
+            new usersServices().register(this.email,this.password,this.firstName,this.lastName,this.address,this.phone,"client").then(response=>console.log("USER CREATED"))
             this.$router.push("/")
         },
         redirectToLogin(){
@@ -109,7 +114,7 @@ body{
 }
 @media(min-width: 968px){
     .imgBx{display: flex; width: 50%; height: 50%;}
-    .login-card{width: 30%; height: 35rem;}
+    .login-card{width: 30%; height: 43rem;}
 }
 
 

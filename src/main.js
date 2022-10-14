@@ -22,11 +22,11 @@ import Paginator from 'primevue/paginator';
 
 const app = createApp(App);
 
-app.component('pv-Paginator',Paginator)
-app.component('pv-Panel',Panel)
-app.component('pv-MenuBar',Menubar)
-app.component('pv-TabMenu',TabMenu)
-app.component('pv-DataView',DataView)
+app.component('pv-paginator',Paginator)
+app.component('pv-panel',Panel)
+app.component('pv-menu-bar',Menubar)
+app.component('pv-tab-menu',TabMenu)
+app.component('pv-data-view',DataView)
 app.component('pv-input-mask',InputMask)
 app.component('pv-button',Button)
 app.component('pv-password',Password)

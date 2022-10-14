@@ -33,7 +33,7 @@ const routes = [
          component: RegisterTechnician
      },
      {
-         path: '/client',
+         path: '/client/:id',
          name:'client',
          component: ()=>import(/*webpackChunkName:"ClientLayout"*/'../components/client/ClientLayout.vue'),
             children:[
@@ -41,27 +41,26 @@ const routes = [
                   path:'',
                   name:'myappliance',
                   component: ()=>import(/*webpackChunkName:"MyAppliance"*/'../views/Client/MyAppliance.vue'),
-                  children:[
-                     {
-                        path:'/myappliance/:id',
-                        component:()=>import(/*webpackChunkName:"ViewAppliance"*/'../components/client/view-appliance.vue')
-                     }
-                  ]
                },
                {
-                  path:'/myplan',
+                  path:'myplan',
                   name:'myplan',
                   component: ()=>import(/*webpackChunkName:"MyPlan"*/'../views/Client/MyPlan.vue')
                },
                {
-                  path:'/notifications',
+                  path:'notifications',
                   name:'client-notifications',
                   component: ()=>import(/*webpackChunkName:"Notifications"*/'../views/Client/Notifications.vue')
                },
                {
-                  path:'/profile',
+                  path:'profile',
                   name:'client-profile',
-                  component: ()=>import(/*webpackChunkName:"Profile"*/'../views/Client/Profile.vue')
+                  component: ()=>import(/*webpackChunkName:"Profile"*/'../views/Client/Profile.vue'),
+                  props:(route)=>{
+                     console.log(route);
+                     const id=Number(route.params.id)
+                     return isNaN(id) ? {id:1}:{id:id}
+                  }
                },
             ]
       },

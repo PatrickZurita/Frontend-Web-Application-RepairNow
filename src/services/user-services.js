@@ -14,6 +14,10 @@ export class usersServices {
     return httpSignal.get("users")
   }
 
+  getUserInformationById=(id)=>{
+    return httpSignal.get("users/"+id)
+  }
+
   register = (email,password,firstName,lastName,address,phone,type) => {
     return axios.post("http://localhost:3000/register",{
       email,

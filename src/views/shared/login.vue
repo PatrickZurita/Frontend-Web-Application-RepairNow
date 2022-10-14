@@ -59,7 +59,7 @@ export default {
                 if(typeUser=="technician"){
                     this.$router.push('/technician');
                 }else{
-                    this.$router.push('/client/');
+                    this.$router.push('/client/'+response.data.user.id);
                 }
 
             })

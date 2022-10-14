@@ -1,12 +1,8 @@
 import axios from 'axios'
 
 const httpSignal=axios.create(
-    {
-    baseURL:"http://localhost:3000/660/",
-    headers:{
-        "Authorization": "Bearer "+ sessionStorage.getItem("jwt")
-    }
-})
+  {baseURL:"http://localhost:3000/660/"})
+
 
 export class usersServices {
 
@@ -15,7 +11,8 @@ export class usersServices {
   }
 
   getUserInformationById=(id)=>{
-    return httpSignal.get("users/"+id)
+    return httpSignal.get("/users/"+id, 
+    { headers: {"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}});
   }
 
   register = (email,password,firstName,lastName,address,phone,type) => {

@@ -57,7 +57,6 @@ const routes = [
                   name:'client-profile',
                   component: ()=>import(/*webpackChunkName:"Profile"*/'../views/Client/Profile.vue'),
                   props:(route)=>{
-                     console.log(route);
                      const id=Number(route.params.id)
                      return isNaN(id) ? {id:1}:{id:id}
                   }

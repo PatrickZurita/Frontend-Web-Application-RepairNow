@@ -122,7 +122,6 @@ export default {
   display: flex;
   gap: 2rem;
   width: 100%;
-  height: 90vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -130,16 +129,16 @@ export default {
 
 .cards-content{
   display: flex;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
 
-.card{
-  width: 25rem;
-  margin-bottom: 2em;
+.card {
   text-align: center;
-  padding: 1rem;
+  width: 50%;
+  height:100%;
 }
 
 .card-logo{
@@ -151,6 +150,29 @@ export default {
 .selected-plan{
   font-weight: bold;
   color: #4caf50;
+}
+
+@media(min-width: 600px){
+  .content{
+    width: 100%;
+    height: 90vh;
+  }
+  .cards-content{
+    flex-direction: row;
+  }
+  .card{
+    width: 30%;
+    padding: 1rem;
+  }
+}
+
+@media(min-width: 1350px){
+  .content{
+    width: 100%;
+  }
+  .card{
+    width: 25rem;
+  }
 }
 
 </style>

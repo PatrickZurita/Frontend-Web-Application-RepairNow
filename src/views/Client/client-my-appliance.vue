@@ -30,7 +30,7 @@
     </div>
 
     <div v-else>
-      <client-especific-appliance @returnBack="" :id="idAppliance"></client-especific-appliance>
+      <client-especific-appliance @returnBack="showAppliances" :id="idAppliance"></client-especific-appliance>
     </div>
 
 
@@ -66,10 +66,10 @@ export default {
     goToAppliance(id){
       this.idAppliance=Number(id)
       this.isShowAppliances=false
-    }//,
-    //showAppliances(){
-    //  this.isShowAppliances=true
-    //}
+    },
+    showAppliances(){
+      this.isShowAppliances=true
+    }
   }
 }
 </script>

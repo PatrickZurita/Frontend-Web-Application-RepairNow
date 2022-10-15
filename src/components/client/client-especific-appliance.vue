@@ -2,13 +2,16 @@
 
   <div class="content">
 
-    <pv-button @click="goBack">GO BACK</pv-button>
+    <pv-button class="button-back" @click="goBack">GO BACK</pv-button>
 
     <div class="card">
 
-      <pv-card style="width: 25em">
+      <pv-card class="card-container">
         <template #header>
-          {{nameOfAppliance}}
+          <div class="card-container__header">
+            <h1>{{nameOfAppliance}}</h1>
+          </div>
+
         </template>
 
         <template #content>
@@ -86,7 +89,6 @@ export default {
             this.year=year
             this.url=urlImage
             this.date=insuranceDate
-            console.log(name,description,brand,model,year,urlImage,insuranceDate)
         })
     },
   computed:{
@@ -95,9 +97,9 @@ export default {
     }
   },
   methods:{
-    //goBack(){
-    //  this.$emit('returnBack')
-    //}
+    goBack(){
+      this.$emit('returnBack')
+    }
   }
 
 }
@@ -112,17 +114,51 @@ export default {
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  gap: 2rem;
 }
-
+.information-appliance-header{
+  font-weight: bold;
+}
+.card-container__header{
+  display:flex;
+  padding: 2rem;
+  justify-content: center;
+}
+.button-back{
+  margin-bottom: 2rem;
+  width: 30%;
+  display:flex;
+  justify-content: center;
+}
 .card-appliance{
-  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .card-appliance__image img{
   width: 100%;
   height:100%;
 }
-@media(min-width: 968px){
+.card-appliance__text{
+  width:100%;
+}
+@media(min-width: 360px){
+  .card-appliance{
+    display: flex;
+    flex-direction:row;
+    gap: 1rem;
+  }
+  .button-back{
+    width: 40%;
+  }
+}
 
+@media(min-width: 700px){
+.card-container{
+  width: 40em;
+}
+  .button-back{
+    width: 8%;
+  }
 }
 
 </style>

@@ -3,7 +3,7 @@ import axios from 'axios'
 export class ModifiedUserServices{
 
   modifyUser(id,firstName,lastName,address,phone,email,password){
-    return axios.patch(`http://localhost:3000/660/`+id,
+    return axios.patch('http://localhost:3000/660/users/'+id,
       {
         firstName,
         lastName,
@@ -11,10 +11,9 @@ export class ModifiedUserServices{
         phone,
         email,
         password
-      },
-      { headers: {"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}}
+      }
+      , { headers: {"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}}
     )
-
   }
 
   //deleteData(id) {

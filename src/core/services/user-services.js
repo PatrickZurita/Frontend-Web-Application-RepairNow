@@ -11,7 +11,7 @@ export class usersServices {
   }
 
   getUserInformationById=(id)=>{
-    return httpSignal.get("/users/"+id, 
+    return httpSignal.get("users/"+id,
     { headers: {"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}});
   }
 

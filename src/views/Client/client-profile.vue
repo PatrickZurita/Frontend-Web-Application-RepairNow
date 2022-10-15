@@ -25,7 +25,7 @@
                     <p class="information-user-header">Email:</p>
                     <p class="information-user-info"> {{this.email}}</p>
                     <p class="information-user-header">Password:</p>
-                    <p class="information-user-info">password</p>
+                    <p class="information-user-info">*********</p>
                 </div>
             </template>
             <template #footer>
@@ -73,27 +73,29 @@ export default {
       openEditDialog(){this.dialogEditDisplay=true},
       closeEditDialog(){this.dialogEditDisplay=false},
       closeDialogForm(isChangeAnything){
-        if(isChangeAnything)console.log("Cambio algo , no se que xd")
+        if(isChangeAnything)this.getData()
         this.closeEditDialog()
       },
       editProfile(){
-        console.log(this.informationProfile)
         this.openEditDialog()
+      },
+      getData(){
+        this.services.getUserInformationById(this.id.toString()).then(response=>{
+          this.informationProfile=response.data
+          this.name=this.informationProfile.firstName
+          this.lastName=this.informationProfile.lastName
+          this.address=this.informationProfile.address
+          this.phone=this.informationProfile.phone
+          this.email=this.informationProfile.email
+          this.password=this.informationProfile.password
+        })
       }
     },
     created(){
         this.services= new usersServices()
     },
     mounted() {
-        this.services.getUserInformationById(this.id.toString()).then(response=>{
-            this.informationProfile=response.data
-            this.name=this.informationProfile.firstName
-            this.lastName=this.informationProfile.lastName
-            this.address=this.informationProfile.address
-            this.phone=this.informationProfile.phone
-            this.email=this.informationProfile.email
-            this.password=this.informationProfile.password
-        })
+        this.getData();
     }
 }
 </script>

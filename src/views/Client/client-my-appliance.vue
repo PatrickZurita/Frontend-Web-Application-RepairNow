@@ -33,24 +33,29 @@
       <client-especific-appliance @returnBack="showAppliances" :id="idAppliance"></client-especific-appliance>
     </div>
 
+    <cliente-new-appliance-dialog :display="dialogNewAppliance" :client-id="Number(this.$route.params.id)" :closable="false"></cliente-new-appliance-dialog>
+
 
 </template>
 
 
 <script>
-import clientEspecificAppliance from "@/components/client/client-especific-appliance.vue";
+import clientEspecificAppliance from "@/components/client/General/client-especific-appliance.vue";
 import {appliancesServices} from '@/core/services/apliances-services.js'
 import {getAppliancesOfUserId} from '@/core/helpers/get-appliances-helpers.js'
+import ClienteNewApplianceDialog from "@/components/client/Dialogs/cliente-new-appliance-dialog.vue";
 
 export default {
   components:{
+    ClienteNewApplianceDialog,
     clientEspecificAppliance
   },
   data(){
     return{
       idAppliance:null,
       appliances:null,
-      isShowAppliances:true
+      isShowAppliances:true,
+      dialogNewAppliance:false,
     }
   },
   services:null,

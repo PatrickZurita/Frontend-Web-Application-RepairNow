@@ -29,6 +29,8 @@
 
 <script>
 import {appliancesServices} from '@/core/services/apliances-services.js'
+import {getAppliancesOfUserId} from '@/core/helpers/get-appliances-helpers.js'
+
 export default {
     data(){
         return{
@@ -41,7 +43,7 @@ export default {
     },
     mounted(){
         this.services.getAppliancesInformation().then(response=>{
-            this.appliances=response.data
+          this.appliances=getAppliancesOfUserId(this.$route.params.id,response.data)
         })
     },
     methods:{

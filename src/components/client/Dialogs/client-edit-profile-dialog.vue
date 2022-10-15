@@ -69,7 +69,7 @@ export default {
     }
   },
   methods:{
-    changeDataChallenge(){
+    changeData(){
       const { firstName,lastName,address,phone,email,password }=this.information
       const {id}=this.$route.params
       console.log(id)
@@ -77,7 +77,7 @@ export default {
       //new ModifiedServices().patchData(id,title,businessId,urlToImage,finaly_challengeType)
     },
     saveChanges(){
-      this.changeDataChallenge()
+      this.changeData()
       this.$emit('closeDialogFormAlert',true)
     },
     cancelChanges(){

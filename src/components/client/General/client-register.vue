@@ -70,7 +70,7 @@ export default {
     },
     methods: {
         register(){
-            new usersServices().register(this.email,this.password,this.firstName,this.lastName,this.address,this.phone,"client").then(response=>console.log("USER CREATED"))
+            new usersServices().register(this.email,this.password,this.firstName,this.lastName,this.address,this.phone,"client","None").then(response=>console.log("USER CREATED"))
             this.$router.push("/")
         },
         redirectToLogin(){

@@ -15,7 +15,7 @@ export class usersServices {
     { headers: {"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}});
   }
 
-  register = (email,password,firstName,lastName,address,phone,type) => {
+  register = (email,password,firstName,lastName,address,phone,type,plan) => {
     return axios.post("http://localhost:3000/register",{
       email,
       password,
@@ -23,7 +23,8 @@ export class usersServices {
       lastName,
       address,
       phone,
-      type
+      type,
+      plan
     })
   }
 

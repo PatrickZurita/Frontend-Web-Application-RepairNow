@@ -1,5 +1,11 @@
 <template>
-    <h1>MY PLAN</h1>
+  <h1>MY PLAN</h1>
+
+  <div class="cards">
+
+    
+
+  </div>
 </template>
 
 <script>

@@ -38,15 +38,14 @@
               <p class="information-appliance-header">Insurance Date:</p>
               <p class="information-appliance-info"> {{this.date}}</p>
 
+              <pv-button icon="pi pi-pencil" class="card-button p-button-rounded p-button-secondary" @click="openEditAppliance"></pv-button>
+
             </div>
 
 
           </div>
         </template>
 
-        <template #footer>
-
-        </template>
       </pv-card>
 
 
@@ -55,13 +54,17 @@
   </div>
 
 
+<client-edit-appliance-dialog @close="closeDialogEditAppliance" :display="displayEditAppliance" :Appliance="appliance"></client-edit-appliance-dialog>
   
 </template>
 
 <script>
+import ClientEditApplianceDialog from "@/components/client/Dialogs/client-edit-appliance-dialog.vue";
 import {appliancesServices} from '@/core/services/apliances-services.js'
 
+
 export default {
+  components: { ClientEditApplianceDialog },
   props:{
     id:{
       type:Number,
@@ -76,20 +79,13 @@ export default {
             brand:null,
             year:null,
             url:null,
-            date:null
+            date:null,
+            appliance:null,
+            displayEditAppliance:false,
         }
     },
     created(){
-        new appliancesServices().getApplianceWithId(this.id).then(response=>{
-            const {name,description,brand,model,year,urlImage,insuranceDate}=response.data
-            this.name=name
-            this.description=description
-            this.brand=brand
-            this.model=model
-            this.year=year
-            this.url=urlImage
-            this.date=insuranceDate
-        })
+      this.getData()
     },
   computed:{
     nameOfAppliance(){
@@ -99,6 +95,29 @@ export default {
   methods:{
     goBack(){
       this.$emit('returnBack')
+    },
+    openEditAppliance(){
+      this.displayEditAppliance=true
+    },
+    closeEditAppliance(){
+      this.displayEditAppliance=false
+    },
+    closeDialogEditAppliance(isChangeAnything){
+      if(isChangeAnything)this.getData()
+      this.closeEditAppliance()
+    },
+    getData(){
+      new appliancesServices().getApplianceWithId(this.id).then(response=>{
+        this.appliance=response.data
+        const {name,description,brand,model,year,urlImage,insuranceDate}=response.data
+        this.name=name
+        this.description=description
+        this.brand=brand
+        this.model=model
+        this.year=year
+        this.url=urlImage
+        this.date=insuranceDate
+      })
     }
   }
 
@@ -140,6 +159,9 @@ export default {
 }
 .card-appliance__text{
   width:100%;
+}
+.card-button{
+  margin-top: 2rem;
 }
 @media(min-width: 360px){
   .card-appliance{

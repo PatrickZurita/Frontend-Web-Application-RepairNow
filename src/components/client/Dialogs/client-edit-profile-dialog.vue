@@ -72,9 +72,7 @@ export default {
     changeData(){
       const { firstName,lastName,address,phone,email,password }=this.information
       const {id}=this.$route.params
-      console.log(id)
       new ModifiedUserServices().modifyUser(id,firstName,lastName,address,phone,email,password)
-      //new ModifiedServices().patchData(id,title,businessId,urlToImage,finaly_challengeType)
     },
     saveChanges(){
       this.changeData()

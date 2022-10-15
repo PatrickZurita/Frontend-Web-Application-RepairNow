@@ -8,7 +8,7 @@
         </section>
 
         <section class="add mb-4">
-          <pv-button class="pi pi-plus">Add Appliance</pv-button>
+          <pv-button @click="openDialog" class="pi pi-plus">Add Appliance</pv-button>
         </section>
 
 
@@ -33,7 +33,7 @@
       <client-especific-appliance @returnBack="showAppliances" :id="idAppliance"></client-especific-appliance>
     </div>
 
-    <cliente-new-appliance-dialog :display="dialogNewAppliance" :client-id="Number(this.$route.params.id)" :closable="false"></cliente-new-appliance-dialog>
+    <cliente-new-appliance-dialog @close="closeDialogNewAppliance" :display="dialogNewAppliance" :client-id="Number(this.$route.params.id)" :closable="false"></cliente-new-appliance-dialog>
 
 
 </template>
@@ -43,7 +43,7 @@
 import clientEspecificAppliance from "@/components/client/General/client-especific-appliance.vue";
 import {appliancesServices} from '@/core/services/apliances-services.js'
 import {getAppliancesOfUserId} from '@/core/helpers/get-appliances-helpers.js'
-import ClienteNewApplianceDialog from "@/components/client/Dialogs/cliente-new-appliance-dialog.vue";
+import ClienteNewApplianceDialog from "@/components/client/Dialogs/client-new-appliance-dialog.vue";
 
 export default {
   components:{
@@ -63,17 +63,27 @@ export default {
     this.services=new appliancesServices()
   },
   mounted(){
-    this.services.getAppliancesInformation().then(response=>{
-      this.appliances=getAppliancesOfUserId(this.$route.params.id,response.data)
-    })
+    this.getData()
   },
   methods:{
+    openDialog(){this.dialogNewAppliance=true},
+    closeDialog(){this.dialogNewAppliance=false},
+    closeDialogNewAppliance(isChangeAnything){
+      if(isChangeAnything)this.getData()
+      this.closeDialog()
+    },
     goToAppliance(id){
       this.idAppliance=Number(id)
       this.isShowAppliances=false
     },
     showAppliances(){
+      this.getData()
       this.isShowAppliances=true
+    },
+    getData(){
+      this.services.getAppliancesInformation().then(response=>{
+        this.appliances=getAppliancesOfUserId(this.$route.params.id,response.data)
+      })
     }
   }
 }

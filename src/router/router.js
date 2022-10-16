@@ -48,9 +48,9 @@ const routes = [
                   component: ()=>import(/*webpackChunkName:"MyPlan"*/'../views/Client/client-my-plan.vue')
                },
                {
-                  path:'notifications',
-                  name:'client-notifications',
-                  component: ()=>import(/*webpackChunkName:"Notifications"*/'../views/Client/client-notifications.vue')
+                  path:'appointment',
+                  name:'client-appointment',
+                  component: ()=>import(/*webpackChunkName:"Notifications"*/'../views/Client/client-appointments.vue')
                },
                {
                   path:'profile',

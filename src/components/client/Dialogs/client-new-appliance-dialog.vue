@@ -33,7 +33,7 @@
 
     <template #footer>
       <pv-button label="Cancel" icon="pi pi-times" class="p-button-text p-button-danger" @click="cancel"/>
-      <pv-button label="Save" icon="pi pi-check"  class="p-button-success" @click="save" autofocus/>
+      <pv-button label="Save" icon="pi pi-check"  class="p-button-success" @click="save"/>
     </template>
 
   </pv-dialog>

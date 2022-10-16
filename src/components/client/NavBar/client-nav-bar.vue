@@ -28,9 +28,9 @@ export default {
                     to: {name:'myplan'}
                 },
                 {
-					label:'Notifications',
-					icon:'pi pi-envelope',
-                    to: {name:'client-notifications'}
+					label:'Appointment',
+					icon:'pi pi-calendar-times',
+                    to: {name:'client-appointment'}
                 },
                 {
 					label:'Profile',

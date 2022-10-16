@@ -24,7 +24,7 @@
 
     <template #footer>
       <pv-button label="Cancel" icon="pi pi-times" class="p-button-text p-button-danger" @click="cancelChanges"/>
-      <pv-button label="Save" icon="pi pi-check"  class="p-button-success" @click="saveChanges" autofocus/>
+      <pv-button label="Save" icon="pi pi-check"  class="p-button-success" @click="saveChanges"/>
     </template>
 
   </pv-dialog>

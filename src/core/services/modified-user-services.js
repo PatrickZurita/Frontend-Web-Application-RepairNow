@@ -16,8 +16,5 @@ export class ModifiedUserServices{
     )
   }
 
-  //deleteData(id) {
-  //  return axios.delete(`http://localhost:3000/challengues/`+id);
-  //}
 
 }

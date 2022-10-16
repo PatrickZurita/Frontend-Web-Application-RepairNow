@@ -36,7 +36,12 @@ export default {
 					label:'Profile',
 					icon:'pi pi-fw pi-user',
                     to: {name:'client-profile'}
-                }
+                },
+              {
+                label:'LogOut',
+                icon:'pi pi-sign-out',
+                to: '/'
+              }
             ]
         }
     }

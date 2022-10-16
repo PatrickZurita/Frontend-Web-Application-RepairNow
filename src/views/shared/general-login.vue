@@ -57,7 +57,7 @@ export default {
                 const typeUser=response.data.user.type
 
                 if(typeUser=="technician"){
-                    this.$router.push('/technician');
+                    this.$router.push('/technician/'+response.data.user.id);
                 }else{
                     this.$router.push('/client/'+response.data.user.id);
                 }

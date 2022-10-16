@@ -25,9 +25,7 @@
               Date:<span>{{slotProps.data.date}}</span>
             </div>
 
-
-
-            <pv-button class="panel__button" icon="pi pi-eye" @click="goToAppliance(slotProps.data.id)"></pv-button>
+            <pv-button icon="pi pi-pencil" class="p-button-rounded p-button-secondary" @click="FillReportAndOpenDialog(slotProps.data.id)"></pv-button>
 
           </pv-panel>
         </div>
@@ -36,29 +34,54 @@
 
   </div>
 
+  <technician-edit-reports-dialog @close="closeDialogEditReport" :display="dialogEditReport" :report="report" :closable="false"></technician-edit-reports-dialog>
+
 </template>
 
 <script>
 import { reportsServices } from '@/core/services/reports-api-service.js'
+import technicianEditReportsDialog from "@/components/technician/Dialogs/technician-edit-reports-dialog.vue";
 
 export default {
 
+  components:{
+    technicianEditReportsDialog
+  },
   data(){
     return{
       reports:null,
+      dialogEditReport:false,
+      report:null,
     }
   },
   created() {
-    new reportsServices().getReportsInformation().then(async(response)=>{
-      const allReports=response.data
-      const reportsOfTechnician=[]
-      for(const object of allReports){
-        if(object.technicianId===Number(this.$route.params.id)){
-          await reportsOfTechnician.push(object)
+    this.getData()
+  },
+  methods:{
+    openDialog(){this.dialogEditReport=true},
+    closeDialog(){this.dialogEditReport=false},
+    closeDialogEditReport(isChangeAnything){
+      if(isChangeAnything)this.getData()
+      this.closeDialog()
+    },
+    async FillReportAndOpenDialog(id){
+      await new reportsServices().getReportWithId(id).then(response=>{
+        this.report=response.data
+      })
+      this.openDialog()
+    },
+    getData(){
+      new reportsServices().getReportsInformation().then(async(response)=>{
+        const allReports=response.data
+        const reportsOfTechnician=[]
+        for(const object of allReports){
+          if(object.technicianId===Number(this.$route.params.id)){
+            await reportsOfTechnician.push(object)
+          }
         }
-      }
-       this.reports=reportsOfTechnician
-    })
+        this.reports=reportsOfTechnician
+      })
+    }
   }
 
 }

@@ -12,4 +12,16 @@ export class reportsServices {
       {headers:{"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}})
   }
 
+  modifyReport(id,observation,diagnosis,repairDescription,date){
+    return axios.patch('http://localhost:3000/660/reports/'+id,
+      {
+        observation,
+        diagnosis,
+        repairDescription,
+        date
+      }
+      , { headers: {"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}}
+    )
+  }
+
 }

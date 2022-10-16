@@ -2,7 +2,7 @@
 	<div>
 		<pv-menu-bar :model="items">
 			<template #start>
-				<img alt="logo repair now" src="@/assets/img/text-logos/logo_repair.png" height="20" class="mr-2">
+				<img alt="logo Repair Now" src="@/assets/img/text-logos/logo_repair.png" height="20" class="mr-2">
 			</template>
 			<template #end>
                 

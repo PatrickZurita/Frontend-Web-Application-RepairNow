@@ -101,7 +101,6 @@ export default {
   align-items: center;
   height: 90vh;
 }
-
 .contain-cards{
   display: flex;
   gap: 1rem;

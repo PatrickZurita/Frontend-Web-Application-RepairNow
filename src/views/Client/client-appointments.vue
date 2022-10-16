@@ -7,7 +7,7 @@
     </section>
 
     <section class="add mb-4">
-      <pv-button @click="" class="pi pi-plus">Add Appointment</pv-button>
+      <pv-button @click="openNewDialog" class="pi pi-plus">Add Appointment</pv-button>
     </section>
 
 
@@ -37,7 +37,7 @@
   </div>
 
   <client-edit-appointment-dialog @close="closeEditDialogAppointment" :display="dialogEditAppointment" :appointments="appointmentIndividually" :closable="false"></client-edit-appointment-dialog>
-
+  <client-new-appointment-dialog :display="dialogNewAppointment" :closable="false"></client-new-appointment-dialog>
 </template>
 
 <script>
@@ -45,16 +45,19 @@ import { appointmentsServices } from "@/core/services/appointments-services.js";
 import { appliancesServices } from "@/core/services/apliances-services.js";
 import {getAppointmentsOfUserId} from "@/core/helpers/get-appointments-helpers.js";
 import clientEditAppointmentDialog from "@/components/client/Dialogs/client-edit-appointment-dialog.vue";
+import clientNewAppointmentDialog from "@/components/client/Dialogs/client-new-appointment-dialog.vue";
 
 export default {
   components:{
-    clientEditAppointmentDialog
+    clientEditAppointmentDialog,
+    clientNewAppointmentDialog
   },
   data(){
     return{
       appointmentsAndAppliances:null,
       appointmentIndividually:null,
       dialogEditAppointment:false,
+      dialogNewAppointment:false,
     }
   },
   services:null,
@@ -66,12 +69,10 @@ export default {
   },
   methods:{
 
-    openEditDialog(){
-      this.dialogEditAppointment=true
-    },
-    closeEditDialog(){
-      this.dialogEditAppointment=false
-    },
+    openEditDialog(){this.dialogEditAppointment=true},
+    closeEditDialog(){this.dialogEditAppointment=false},
+    openNewDialog(){this.dialogNewAppointment=true},
+    closeNewDialog(){this.dialogNewAppointment=false},
     closeEditDialogAppointment(isChangeAnything){
       if(isChangeAnything)this.getInformationAppointmentsAndAppliances()
       this.closeEditDialog()

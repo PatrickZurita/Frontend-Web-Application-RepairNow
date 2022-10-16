@@ -79,18 +79,21 @@ const routes = [
                {
                  path:'profile',
                  name:'technician-profile',
-                 component: ()=>import(/*webpackChunkName:"Profile"*/'../views/technician/technician-profile.vue')
-
+                 component: ()=>import(/*webpackChunkName:"Profile"*/'../views/technician/technician-profile.vue'),
+                 props:(route)=>{
+                   const id=Number(route.params.id)
+                   return isNaN(id) ? {id:1}:{id:id}
+                 }
                },
                {
                   path:'myreports',
                   name:'myreports',
-                  component: ()=>import(/*webpackChunkName:"MyReports"*/'../views/technician/technician-reports.vue')
+                  component: ()=>import(/*webpackChunkName:"MyReports"*/'../views/technician/technician-my-reports.vue')
                },
                {
                  path:'myroutes',
                  name:'myroutes',
-                 component: ()=>import(/*webpackChunkName:"MyRoutes"*/'../views/technician/technician-routes.vue')
+                 component: ()=>import(/*webpackChunkName:"MyRoutes"*/'../views/technician/technician-my-routes.vue')
                },
             ]
       },

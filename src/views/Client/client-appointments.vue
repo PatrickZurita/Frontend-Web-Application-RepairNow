@@ -37,7 +37,7 @@
   </div>
 
   <client-edit-appointment-dialog @close="closeEditDialogAppointment" :display="dialogEditAppointment" :appointments="appointmentIndividually" :closable="false"></client-edit-appointment-dialog>
-  <client-new-appointment-dialog :display="dialogNewAppointment" :closable="false"></client-new-appointment-dialog>
+  <client-new-appointment-dialog @close="closeNewDialogAppointment" :display="dialogNewAppointment" :closable="false"></client-new-appointment-dialog>
 </template>
 
 <script>
@@ -76,6 +76,10 @@ export default {
     closeEditDialogAppointment(isChangeAnything){
       if(isChangeAnything)this.getInformationAppointmentsAndAppliances()
       this.closeEditDialog()
+    },
+    closeNewDialogAppointment(isChangeAnything){
+      if(isChangeAnything)this.getInformationAppointmentsAndAppliances()
+      this.closeNewDialog()
     },
     async openDialogAndFillAppointment(id){
       await this.getAppointmentIndividually(id);

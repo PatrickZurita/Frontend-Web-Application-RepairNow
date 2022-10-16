@@ -18,6 +18,8 @@
       <span id="hour">Hour:</span>
       <pv-input-text aria-labelledby="hour" v-model="this.hour"/>
 
+      <span id="applianceForSelection">Appliance:</span>
+      <pv-dropdown aria-labelledby="applianceForSelection" v-model="selectedAppliance" :options="appliancesNotRegister" optionLabel="computedName" placeholder="Select a Appliance" />
 
     </div>
 
@@ -49,9 +51,8 @@ export default {
       dateReserve:null,
       dateAttention:null,
       hour:null,
-      appliancesNotRegister:[
-
-      ]
+      selectedAppliance:null,
+      appliancesNotRegister:null
 
     }
   },
@@ -80,16 +81,11 @@ export default {
         listApplianceModelId.push(applianceModelId)
       }
 
-      //console.log(listApplianceModelId)
-
       let appliancesData=[]
 
       await this.servicesAppliance.getAppliancesInformation().then(response=>{
         appliancesData=getAppliancesOfUserId(this.$route.params.id,response.data)
       })
-
-      //console.log(appliancesData)
-
 
       let appliancesWithinAppointment=[]
 
@@ -100,19 +96,25 @@ export default {
         }
       }
 
-      console.log(appliancesWithinAppointment)
-
       let option=[]
       for(const object of appliancesWithinAppointment){
-        const {name,brand}=object
-        option.push({name,brand})
+        const {id,name,brand}=object
+        const computedName=name+" "+brand
+        option.push({id,computedName})
       }
 
-      console.log(option)
+      this.appliancesNotRegister=option
 
+    },
+    cancel(){
+      this.$emit('close',false)
+    },
+    async save(){
+      const {id}=this.selectedAppliance
+      await new appointmentsServices().postNewAppointment(this.dateReserve,this.dateAttention,this.hour,Number(this.$route.params.id),id)
+      await this.getAppointmentsOfClient()
+      this.$emit('close',true)
     }
-
-
   }
 };
 

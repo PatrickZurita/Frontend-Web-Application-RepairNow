@@ -20,9 +20,11 @@ import Menubar from 'primevue/menubar';
 import Panel from 'primevue/panel';
 import Paginator from 'primevue/paginator';
 import Dialog from 'primevue/dialog';
+import Dropdown from 'primevue/dropdown';
 
 const app = createApp(App);
 
+app.component('pv-dropdown',Dropdown)
 app.component('pv-dialog',Dialog)
 app.component('pv-paginator',Paginator)
 app.component('pv-panel',Panel)

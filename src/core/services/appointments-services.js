@@ -12,6 +12,16 @@ export class appointmentsServices {
       {headers:{"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}})
   }
 
+  postNewAppointment=(dateReserve,dateAttention,hour,clientId,applianceModelId)=>{
+    return axios.post('http://localhost:3000/660/appointments',{
+      dateReserve,
+      dateAttention,
+      hour,
+      clientId,
+      applianceModelId
+    },{headers:{"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}})
+  }
+
   modifyAppointment(id,dateReserve,dateAttention,hour){
     return axios.patch('http://localhost:3000/660/appointments/'+id,
       {

@@ -32,7 +32,11 @@ export default {
                 icon:'pi pi-book',
                 to: {name:'myreports'}
               },
-
+              {
+                label:'LogOut',
+                icon:'pi pi-sign-out',
+                to: '/'
+              }
             ]
         }
     }

@@ -3,7 +3,7 @@
   <div class="content flex flex-column align-items-center">
 
     <section class="title">
-      <h1 class="title__text">Reports Technician</h1>
+      <h1 class="title__text">{{$t("Reports Technician")}}</h1>
       <img class="image" src="@/assets/img/technician-section-images/report-logo.png" alt="any reports image">
     </section>
 
@@ -13,16 +13,16 @@
           <pv-panel class="panel" header="Report Data">
 
             <div class="panel__text">
-              Observation:<span>{{slotProps.data.observation}}</span>
+              {{$t("Observation:")}}<span>{{slotProps.data.observation}}</span>
             </div>
             <div class="panel__text">
-              Diagnosis:<span>{{slotProps.data.diagnosis}}</span>
+              {{$t("Diagnosis:")}}<span>{{slotProps.data.diagnosis}}</span>
             </div>
             <div class="panel__text">
-              Repair Description:<span>{{slotProps.data.repairDescription}}</span>
+              {{$t("Repair Description:")}}<span>{{slotProps.data.repairDescription}}</span>
             </div>
             <div class="panel__text">
-              Date:<span>{{slotProps.data.date}}</span>
+              {{$t("Date:")}}<span>{{slotProps.data.date}}</span>
             </div>
 
             <pv-button icon="pi pi-pencil" class="p-button-rounded p-button-secondary" @click="FillReportAndOpenDialog(slotProps.data.id)"></pv-button>

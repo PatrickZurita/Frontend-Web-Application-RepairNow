@@ -7,24 +7,24 @@
         <img class="card-image" src="@/assets/img/technician-section-images/technician-photo.webp">
       </template>
       <template #title>
-        Profile Information
+        {{$t("Profile Information")}}
       </template>
       <template #subtitle>
-        TechnicianProfile
+        {{$t("TechnicianProfile")}}
       </template>
       <template #content>
         <div class="information-user">
-          <p class="information-user-header">Name:</p>
+          <p class="information-user-header">{{$t("Name:")}}</p>
           <p class="information-user-info"> {{this.name}}</p>
-          <p class="information-user-header">LastName:</p>
+          <p class="information-user-header">{{$t("LastName:")}}</p>
           <p class="information-user-info"> {{this.lastName}}</p>
-          <p class="information-user-header">Address:</p>
+          <p class="information-user-header">{{$t("Address:")}}</p>
           <p class="information-user-info"> {{this.address}}</p>
-          <p class="information-user-header">Phone:</p>
+          <p class="information-user-header">{{$t("Phone:")}}</p>
           <p class="information-user-info"> {{this.phone}}</p>
-          <p class="information-user-header">Email:</p>
+          <p class="information-user-header">{{$t("Email:")}}</p>
           <p class="information-user-info"> {{this.email}}</p>
-          <p class="information-user-header">Password:</p>
+          <p class="information-user-header">{{$t("Password:")}}</p>
           <p class="information-user-info">*********</p>
         </div>
       </template>

@@ -11,10 +11,10 @@
         <template #title>
         </template>
         <template #content>
-          <p class="card-text">Address:<span class="card-span">{{item.address}}</span></p>
-          <p class="card-text">Date Reserve:<span class="card-span">{{item.dateReserve}}</span></p>
-          <p class="card-text">Date Attention:<span class="card-span">{{item.dateAttention}}</span></p>
-          <p class="card-text">Hour:<span class="card-span">{{item.hour}}</span></p>
+          <p class="card-text">{{$t("Address:")}}<span class="card-span">{{item.address}}</span></p>
+          <p class="card-text">{{$t("Date Reserve:")}}<span class="card-span">{{item.dateReserve}}</span></p>
+          <p class="card-text">{{$t("Date Attention:")}}<span class="card-span">{{item.dateAttention}}</span></p>
+          <p class="card-text">{{$t("Hour:")}}<span class="card-span">{{item.hour}}</span></p>
         </template>
       </pv-card>
 

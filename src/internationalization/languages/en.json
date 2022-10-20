@@ -51,7 +51,14 @@
     "Address:": "Address:",
     "Phone:": "Phone:",
     "Email:": "Email:",
-    "Password:": "Password:"
+    "Password:": "Password:",
+    "Reports Technician": "Reports Technician",
+    "Observation:": "Observation:",
+    "Diagnosis:": "Diagnosis:",
+    "Repair Description:": "Repair Description:",
+    "Date:": "Date:",
+    "TechnicianProfile": "TechnicianProfile"
+
 
 
 }

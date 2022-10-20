@@ -51,7 +51,12 @@
     "Address:": "Dirección:",
     "Phone:": "Teléfono:",
     "Email:": "Correo:",
-    "Password:": "Contraseña:"
-
+    "Password:": "Contraseña:",
+    "Reports Technician": "Informe del técnico",
+    "Observation:": "Observación:",
+    "Diagnosis:": "Diagnóstico:",
+    "Repair Description:": "Descripción de la reparación:",
+    "Date:": "Fecha:",
+    "TechnicianProfile": "Perfil Técnico"
 
 }

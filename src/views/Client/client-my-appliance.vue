@@ -4,11 +4,11 @@
 
       <div class="content flex flex-column align-items-center">
         <section class="title">
-          <h1 class="title__text">My Appliances</h1>
+          <h1 class="title__text">{{$t("MY APPLIANCES")}}</h1>
         </section>
 
         <section class="add mb-4">
-          <pv-button @click="openDialog" class="pi pi-plus">Add Appliance</pv-button>
+          <pv-button @click="openDialog" class="pi pi-plus">{{$t("Add device")}}</pv-button>
         </section>
 
 

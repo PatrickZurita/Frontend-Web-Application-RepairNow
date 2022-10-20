@@ -4,7 +4,7 @@ import es from '../languages/es.json'
 
 
 const i18n=createI18n({
-    locale:"en",
+    locale:"es",
     messages:{
         en:en,
         es:es 

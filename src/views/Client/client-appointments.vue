@@ -3,11 +3,11 @@
   <div class="content flex flex-column align-items-center">
 
     <section class="title">
-      <h1 class="title__text">APPOINTMENT</h1>
+      <h1 class="title__text">{{$t("MY APPLIANCES")}}</h1>
     </section>
 
     <section class="add mb-4">
-      <pv-button @click="openNewDialog" class="pi pi-plus">Add Appointment</pv-button>
+      <pv-button @click="openNewDialog" class="pi pi-plus">{{$t("Add Appointment")}}</pv-button>
     </section>
 
 
@@ -18,16 +18,16 @@
 
             <img class="panel__image" :src="slotProps.data.urlImage" :alt="slotProps.data.name"/>
             <div class="panel__text">
-              <p>Model:<span>{{slotProps.data.model}}</span></p>
+              <p>{{$t("Model:")}}<span>{{slotProps.data.model}}</span></p>
             </div>
             <div class="panel__text">
-              <p>Date Reserve:<span>{{slotProps.data.dateReserve}}</span></p>
+              <p>{{$t("Date Reserve:")}}<span>{{slotProps.data.dateReserve}}</span></p>
             </div>
             <div class="panel__text">
-              <p>Date Attention:<span>{{slotProps.data.dateAttention}}</span></p>
+              <p>{{$t("Date Attention:")}}<span>{{slotProps.data.dateAttention}}</span></p>
             </div>
             <div class="panel__text">
-              <p>Hour:<span>{{slotProps.data.hour}}</span></p>
+              <p>{{$t("Hour:")}}<span>{{slotProps.data.hour}}</span></p>
             </div>
             <pv-button icon="pi pi-pencil" class="p-button-rounded p-button-secondary" @click="openDialogAndFillAppointment(slotProps.data.id)"></pv-button>
           </pv-panel>

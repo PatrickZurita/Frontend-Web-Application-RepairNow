@@ -1,28 +1,28 @@
 <template>
 
   <div class="content">
-    <h1>More advantages with a better plan</h1>
+    <h1>{{$t("More advantages with a better plan")}}</h1>
 
     <div class="cards-content">
 
       <pv-card class="card">
         <template #header>
-          <h1>Monthly</h1>
+          <h1>{{$t("Monthly")}}</h1>
         </template>
         <template #title>
           <img class="card-logo" src="@/assets/img/user-section-images/plan_basic.png" alt="logo_appliance_basic_plan">
-          <h2>GREAT CLIENT</h2>
+          <h2>{{$t("GREAT CLIENT")}}</h2>
         </template>
         <template #content>
-          <p>This plan it's only for 1 month</p>
+          <p>{{$t("This plan it's only for 1 month")}}</p>
         </template>
 
         <template #footer>
           <div v-if="this.typeOfPlan==='monthly'">
-            <p class="selected-plan">Plan Selected</p>
+            <p class="selected-plan">{{$t("Plan Selected")}}</p>
           </div>
           <div v-else>
-            <pv-button @click="changePlan('monthly')">CHOOSE PLAN</pv-button>
+            <pv-button @click="changePlan('monthly')">{{$t("CHOOSE PLAN")}}</pv-button>
           </div>
         </template>
 
@@ -32,22 +32,22 @@
 
       <pv-card class="card">
         <template #header>
-          <h1>Quarterly</h1>
+          <h1>{{$t("Quarterly")}}</h1>
         </template>
         <template #title>
           <img class="card-logo" src="@/assets/img/user-section-images/plan_premium.png" alt="logo_appliance_quarterly_plan">
-          <h2>MEGA CLIENT (3 Months)</h2>
+          <h2>{{$t("MEGA CLIENT (3 Months)")}}</h2>
         </template>
         <template #content>
-          <p>This plan it's only for 3 month</p>
+          <p>{{$t("This plan it's only for 3 month")}}</p>
         </template>
 
         <template #footer>
           <div v-if="this.typeOfPlan==='quarterly'">
-            <p class="selected-plan">Plan Selected</p>
+            <p class="selected-plan">{{$t("Plan Selected")}}</p>
           </div>
           <div v-else>
-            <pv-button @click="changePlan('quarterly')">CHOOSE PLAN</pv-button>
+            <pv-button @click="changePlan('quarterly')">{{$t("CHOOSE PLAN")}}</pv-button>
           </div>
         </template>
 
@@ -56,22 +56,22 @@
 
       <pv-card class="card">
         <template #header>
-          <h1>Yearly</h1>
+          <h1>{{$t("Yearly")}}</h1>
         </template>
         <template #title>
           <img class="card-logo" src="@/assets/img/user-section-images/plan_premium.png" alt="logo_appliance_quarterly_plan">
-          <h2>MEGA CLIENT (12 Months)</h2>
+          <h2>{{$t("MEGA CLIENT (12 Months)")}}</h2>
         </template>
         <template #content>
-          <p>This plan it's only for 1 year</p>
+          <p>{{$t("This plan it's only for 1 year")}}</p>
         </template>
 
         <template #footer>
           <div v-if="this.typeOfPlan==='yearly'">
-            <p class="selected-plan">Plan Selected</p>
+            <p class="selected-plan">{{$t("Plan Selected")}}</p>
           </div>
           <div v-else>
-            <pv-button @click="changePlan('yearly')">CHOOSE PLAN</pv-button>
+            <pv-button @click="changePlan('yearly')">{{$t("CHOOSE PLAN")}}</pv-button>
           </div>
         </template>
       </pv-card>

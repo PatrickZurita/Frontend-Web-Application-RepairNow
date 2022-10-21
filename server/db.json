@@ -137,6 +137,38 @@
       "amount": "70"
     }
   ],
+  "appointments": [
+    {
+      "id": "1",
+      "dateReserve": "19/10/2021",
+      "dateAttention": "20/10/2021",
+      "hour": "02:19",
+      "clientId": "1",
+      "technicianId": "1",
+      "applianceId": "1",
+      "done": false
+    },
+    {
+      "id": "2",
+      "dateReserve": "19/10/2021",
+      "dateAttention": "20/10/2021",
+      "hour": "09:42",
+      "clientId": "1",
+      "technicianId": "1",
+      "applianceId": "2",
+      "done": false
+    },
+    {
+      "id": "3",
+      "dateReserve": "19/10/2021",
+      "dateAttention": "20/10/2021",
+      "hour": "11:59",
+      "clientId": "2",
+      "technicianId": "2",
+      "applianceModelId": "3",
+      "done": false
+    }
+  ],
   "myPlans": [
     {
       "id": "1",

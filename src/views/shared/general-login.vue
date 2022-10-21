@@ -23,7 +23,7 @@
                             </div>
                             <div class="second-part flex flex-column gap-4">
                                 <p>{{$t("Don't have an account?")}} <span class="sign-up text-blue-600" @click="redirectToRegister">{{$t("Sign Up Now!")}}</span></p>
-                                <p><span>{{$t("About")}}</span>    |    <span>{{$t("Contact")}}</span></p>
+                                <p><span><a class="about text-blue-600" href="https://appdeveloperss.github.io/Landing-Page-RepairNow/" target="_blank">{{$t("About")}}</a></span></p>
                             </div>
                         </div>
                     </template>
@@ -86,6 +86,9 @@ body{
     display: flex;
     min-height: 100vh;
 }
+.about{
+  text-decoration: none;
+}
 .imgBx{display: none;}
 .imgLogo{width: 40%;}
 .login-card{box-shadow: 5px 10px 8px #888888;width: 80%;}
@@ -95,7 +98,7 @@ body{
 .log-button:after {content: '»';position: absolute;opacity: 0;  top: 14px;right: -20px;transition: 0.5s;}
 .log-button:hover{padding-right: 24px;padding-left:8px;}
 .log-button:hover:after {opacity: 1;right: 10px;}
-.sign-up:hover{
+.sign-up:hover ,.about:hover{
     cursor: pointer;
     font-weight: bold;
     transition: 0.1s;

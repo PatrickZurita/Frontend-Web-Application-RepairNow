@@ -114,6 +114,29 @@
       "imagePath": "lg-logo.png"
     }
   ],
+  "plans": [
+    {
+      "id": "1",
+      "name": "basic",
+      "description": "This plan only accepts 1 appliance",
+      "numArtefacts": "1",
+      "amount": "15"
+    },
+    {
+      "id": "2",
+      "name": "regular",
+      "description": "This plan only accepts 3 appliance",
+      "numArtefacts": "3",
+      "amount": "40"
+    },
+    {
+      "id": "3",
+      "name": "pro",
+      "description": "This plan only accepts 5 appliance",
+      "numArtefacts": "5",
+      "amount": "70"
+    }
+  ],
   "applianceModels": [
     {
       "id": "1",

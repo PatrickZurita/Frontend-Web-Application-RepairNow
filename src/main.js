@@ -3,10 +3,9 @@ import i18n from './internationalization/locales/i18n.js'
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
 import router from './router/router.js'
-
-import 'primevue/resources/themes/saga-blue/theme.css'       //theme
-import 'primevue/resources/primevue.min.css'                 //core css
-import 'primeicons/primeicons.css'                           //icons
+import 'primevue/resources/themes/saga-blue/theme.css'       
+import 'primevue/resources/primevue.min.css'                 
+import 'primeicons/primeicons.css'                          
 import '/node_modules/primeflex/primeflex.css'
 import Toolbar from 'primevue/toolbar';
 import Card from 'primevue/card';
@@ -37,6 +36,7 @@ app.component('pv-password',Password)
 app.component('pv-input-text',InputText)
 app.component('pv-card',Card)
 app.component('pv-toolbar',Toolbar)
+
 app.use(PrimeVue);
 app.use(i18n)
 app.use(router);

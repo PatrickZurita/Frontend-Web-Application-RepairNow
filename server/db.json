@@ -91,5 +91,85 @@
       "password": "$2a$10$JXp7xWdX.aChJM0IYss6meh90yyGtl8W7dfSTFdIDDe9XQ7Yyc1oS",
       "id": 4
     }
+  ],
+  "applianceBrands": [
+    {
+      "id": "1",
+      "name": "Samsung",
+      "imagePath": "samsung-logo.png"
+    },
+    {
+      "id": "2",
+      "name": "Daewoo",
+      "imagePath": "daewoo-logo.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Electrolux",
+      "imagePath": "electrolux-logo.png"
+    },
+    {
+      "id": "4",
+      "name": "LG",
+      "imagePath": "lg-logo.png"
+    }
+  ],
+  "applianceModels": [
+    {
+      "id": "1",
+      "name": "Refrigerator French Door IBACI Inox Look, 547 L (110 V)",
+      "model": "RF220FCTAS8/AP",
+      "imagePath": "refrigerator-samsung.jpg",
+      "applianceBrandId": "1"
+    },
+    {
+      "id": "2",
+      "name": "Sliding Design Gas Cooker",
+      "model": "NX60T8115SS/AP",
+      "imagePath": "stove-samsung.jpg",
+      "applianceBrandId": "1"
+    },
+    {
+      "id": "3",
+      "name": "Automatic washing-machine 14,5 Kg",
+      "model": "DWF-145GMG",
+      "imagePath": "washing-machine-daewoo.jpg",
+      "applianceBrandId": "2"
+    },
+    {
+      "id": "4",
+      "name": "28 Liter Microwave Oven",
+      "model": "KOR-28MD",
+      "imagePath": "microwave-daewoo.jpg",
+      "applianceBrandId": "2"
+    },
+    {
+      "id": "5",
+      "name": "Washing-machine Electrolux Fuzzy Logic 10.5 kg",
+      "model": "EWIV10D2OSGSG",
+      "imagePath": "washing-machine-electrolux.jpg",
+      "applianceBrandId": "3"
+    },
+    {
+      "id": "6",
+      "name": "Dust and Water Vacuum",
+      "model": "GT30N",
+      "imagePath": "vaccum-electrolux.jpg",
+      "applianceBrandId": "3"
+    },
+    {
+      "id": "7",
+      "name": "Refrigerator Bottom Freezer 336L, Multiple Airflow, Humidity Control and Wi-Fi Connectivity",
+      "model": "GB37WGT",
+      "imagePath": "refrigerator-lg.jpg",
+      "applianceBrandId": "4"
+    },
+    {
+      "id": "8",
+      "name": "Drying machine 9 Kg, front loading with Dual Inverter Heat Pump, EcoHybrid and Wi-Fi connectivity",
+      "model": "DF9WVC2S6",
+      "imagePath": "drying-machine-lg.jpg",
+      "applianceBrandId": "4"
+    }
   ]
 }

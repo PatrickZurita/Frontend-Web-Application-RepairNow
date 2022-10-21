@@ -171,5 +171,37 @@
       "imagePath": "drying-machine-lg.jpg",
       "applianceBrandId": "4"
     }
+  ],
+  "reports": [
+    {
+      "id": "1",
+      "observation": "Circuit burned",
+      "diagnosis": "An internal circuit of the refrigerator has burned.",
+      "repairDescription": "I soldered the burned circuit",
+      "date": "25/9/2021",
+      "imagePath": "image.png",
+      "appointmentId": "1",
+      "technicianId": "1"
+    },
+    {
+      "id": "2",
+      "observation": "Cable disconnected",
+      "diagnosis": "An internal cable was disconnected from the washing machine, possibly due to movement of the washing machine.",
+      "repairDescription": "I took the washer apart to get to the internal circuits and reconnected the cable.",
+      "date": "25/9/2021",
+      "imagePath": "image.png",
+      "appointmentId": "2",
+      "technicianId": "1"
+    },
+    {
+      "id": "3",
+      "observation": "Program buttons did not work",
+      "diagnosis": "The buttons on the microwave were not working, this was caused by an internal short-circuit.",
+      "repairDescription": "I replaced and soldered the internal circuit",
+      "date": "25/9/2021",
+      "imagePath": "image.png",
+      "appointmentId": "3",
+      "technicianId": "2"
+    }
   ]
 }

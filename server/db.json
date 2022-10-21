@@ -137,6 +137,29 @@
       "amount": "70"
     }
   ],
+  "myPlans": [
+    {
+      "id": "1",
+      "categoryPlan": "1",
+      "clientId": "1",
+      "active": true,
+      "subscriptionDate": ""
+    },
+    {
+      "id": "2",
+      "categoryPlan": "2",
+      "clientId": "2",
+      "active": true,
+      "subscriptionDate": ""
+    },
+    {
+      "id": "3",
+      "categoryPlan": "3",
+      "clientId": "3",
+      "active": true,
+      "subscriptionDate": ""
+    }
+  ],
   "applianceModels": [
     {
       "id": "1",

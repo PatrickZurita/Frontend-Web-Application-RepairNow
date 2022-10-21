@@ -321,5 +321,25 @@
       "section": "Home",
       "visible": false
     }
+  ],
+  "administrators": [
+    {
+      "id": "1",
+      "cellphoneNumber": "999888777",
+      "name": "Andres Pedro",
+      "lastName": "Bayona Fernandez",
+      "address": "av. Zarumilla 555",
+      "email": "andresbay@gmail.com",
+      "password": "andresbayo"
+    },
+    {
+      "id": "2",
+      "cellphoneNumber": "978565421",
+      "name": "Mariana Kelly",
+      "lastName": "Soto Aponte",
+      "address": "av. Faucet 214",
+      "email": "marianakey@gmail.com",
+      "password": "marianakey"
+    }
   ]
 }

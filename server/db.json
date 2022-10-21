@@ -299,5 +299,27 @@
       "imagePath": "image.png",
       "appointmentId": "5"
     }
+  ],
+  "announcements": [
+    {
+      "id": "1",
+      "title": "New Models",
+      "description": "The latest models arrives to iElectric",
+      "content": "The last couple of weeks, we were waiting for the latest models in iElectric...",
+      "urlToImage": "https://images.thdstatic.com/productImages/43d40bec-538f-4a58-9dfa-708f94e35561/svn/printproof-black-stainless-steel-lg-electronics-french-door-refrigerators-lrmvs3006d-64_600.jpg",
+      "type": "Informative",
+      "section": "Home",
+      "visible": true
+    },
+    {
+      "id": "2",
+      "title": "LG - Power never seem before",
+      "description": "The newest models arriving in iElectric",
+      "content": "This year LG surprise to us with the newest models arriving in iElectric, we was expecting for a long time, but now, the wait is over",
+      "urlToImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzbkxRpDweJ1oMpx5Jx7DxcIZ7DX4J-EVq3w&usqp=CAU",
+      "type": "Advertisement",
+      "section": "Home",
+      "visible": false
+    }
   ]
 }
